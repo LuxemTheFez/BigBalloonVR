@@ -14,6 +14,11 @@ config/name="BigBalloonVr"
 run/main_scene="res://Scenes/Hub.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/fullscreen=true
+window/stretch/mode="2d"
+
 [gdnative]
 
 singletons=[ "res://addons/godot-openvr/godot_openvr.gdnlib" ]
