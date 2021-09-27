@@ -227,5 +227,5 @@ func create_balloon(father_balloon,type,offset):
 			new_path.add_child(new_balloon)
 			father_balloon.get_parent().get_parent().add_child(new_path)
 
-# TODO GET COULEUR
+# TODO GET COLOR
 # TODO GET SPRITE
