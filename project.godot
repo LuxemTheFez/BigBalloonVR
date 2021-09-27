@@ -8,14 +8,41 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "OculusTracker",
+"class": "OculusHandTracker",
+"language": "GDScript",
+"path": "res://addons/godot_ovrmobile/example_scenes/oculus_hand_tracker.gd"
+}, {
+"base": "OculusTracker",
+"class": "OculusTouchController",
+"language": "GDScript",
+"path": "res://addons/godot_ovrmobile/example_scenes/oculus_touch_controller.gd"
+}, {
+"base": "ARVRController",
+"class": "OculusTracker",
+"language": "GDScript",
+"path": "res://addons/godot_ovrmobile/example_scenes/oculus_tracker.gd"
+} ]
+_global_script_class_icons={
+"OculusHandTracker": "",
+"OculusTouchController": "",
+"OculusTracker": ""
+}
+
 [application]
 
 config/name="BigBalloonVr"
+run/main_scene="res://Scenes/Hub.tscn"
 config/icon="res://Assets/icon.png"
 
 [gdnative]
 
-singletons=[ "res://addons/godot-openvr/godot_openvr.gdnlib" ]
+singletons=[ "res://addons/godot_ovrmobile/godot_ovrmobile.gdnlib" ]
+
+[global]
+
+etc=false
 
 [physics]
 
@@ -23,4 +50,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"
