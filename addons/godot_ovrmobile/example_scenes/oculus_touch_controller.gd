@@ -38,6 +38,9 @@ var _controllers_vibration_duration = {}
 
 onready var camera : ARVRCamera = origin.get_node("ARVRCamera")
 
+func _physics_process_update_controller_velocity(delta):
+	pass
+
 func _ready():
 	ovr_input = load("res://addons/godot_ovrmobile/OvrInput.gdns")
 	if (ovr_input): ovr_input = ovr_input.new()
@@ -160,6 +163,7 @@ func _on_RightTouchController_button_pressed(button):
 
 	if (button == CONTROLLER_BUTTON.XA):
 		_start_controller_vibration(40, 0.5)
+	
 
 
 func _on_RightTouchController_button_release(button):

@@ -63,7 +63,7 @@ func _initialize_ovr_mobile_arvr_interface():
 			if (ovr_system):
 				ovr_system = ovr_system.new()
 				if (ovr_system.is_oculus_quest_2_device()):
-					refresh_rate = 90 # Only supported on Quest 2 devices
+					refresh_rate = 120 # Only supported on Quest 2 devices
 			
 			if (ovr_display): 
 				ovr_display = ovr_display.new()
