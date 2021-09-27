@@ -64,7 +64,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" parent="CanvasLayer/MarginContainer" instance=ExtResource( 2 )]
+[node name="MainUI" parent="CanvasLayer/MarginContainer" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1024.0

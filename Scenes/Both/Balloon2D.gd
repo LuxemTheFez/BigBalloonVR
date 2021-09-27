@@ -3,7 +3,7 @@ class_name Balloon2D
 
 onready var pathToFollow = get_parent()
 
-var speed = 500
+var speed = 300
 
 func _process(delta):
 	$AnimatedSprite.rotation_degrees = -get_parent().rotation_degrees

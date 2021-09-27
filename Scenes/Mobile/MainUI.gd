@@ -11,7 +11,7 @@ extends Control
 
 var color_min_value = 71.0
 var color_max_value = 245.0
-var color_step = 9.0
+var color_step = 1.0
 
 onready var button = $Panel/VBoxContainer/TextureButton
 var etape = 0
