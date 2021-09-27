@@ -161,239 +161,71 @@ func pop(balloon):
 		types.PINK:
 			balloon.type = types.YELLOW
 		types.BLACK:
-			var new_balloon1 = NODE_BALLOON2D.instance()
-			var new_balloon2 = NODE_BALLOON2D.instance()
-			new_balloon1.type = types.PINK
-			new_balloon2.type = types.PINK
-			var new_path1 = balloon.get_parent().duplicate()
-			var new_path2 = balloon.get_parent().duplicate()
-			new_path1.set_offset(new_path1.get_offset()-8)
-			new_path2.set_offset(new_path2.get_offset()+8)
-			new_path1.add_child(new_balloon1)
-			new_path2.add_child(new_balloon2)
-			balloon.get_parent().get_parent().add_child(new_path1)
-			balloon.get_parent().get_parent().add_child(new_path2)
-			balloon.get_parent().queue_free()
+			create_balloon(balloon,types.PINK,-8)
+			create_balloon(balloon,types.PINK,8)
 		types.WHITE:
-			var new_balloon1 = NODE_BALLOON2D.instance()
-			var new_balloon2 = NODE_BALLOON2D.instance()
-			new_balloon1.type = types.PINK
-			new_balloon2.type = types.PINK
-			var new_path1 = balloon.get_parent().duplicate()
-			var new_path2 = balloon.get_parent().duplicate()
-			new_path1.set_offset(new_path1.get_offset()-8)
-			new_path2.set_offset(new_path2.get_offset()+8)
-			new_path1.add_child(new_balloon1)
-			new_path2.add_child(new_balloon2)
-			balloon.get_parent().get_parent().add_child(new_path1)
-			balloon.get_parent().get_parent().add_child(new_path2)
+			create_balloon(balloon,types.PINK,-8)
+			create_balloon(balloon,types.PINK,8)
 			balloon.get_parent().queue_free()
 		types.PURPLE:
-			var new_balloon1 = NODE_BALLOON2D.instance()
-			var new_balloon2 = NODE_BALLOON2D.instance()
-			new_balloon1.type = types.PINK
-			new_balloon2.type = types.PINK
-			var new_path1 = balloon.get_parent().duplicate()
-			var new_path2 = balloon.get_parent().duplicate()
-			new_path1.set_offset(new_path1.get_offset()-8)
-			new_path2.set_offset(new_path2.get_offset()+8)
-			new_path1.add_child(new_balloon1)
-			new_path2.add_child(new_balloon2)
-			balloon.get_parent().get_parent().add_child(new_path1)
-			balloon.get_parent().get_parent().add_child(new_path2)
+			create_balloon(balloon,types.PINK,-8)
+			create_balloon(balloon,types.PINK,8)
 			balloon.get_parent().queue_free()
 		types.LEAD:
-			var new_balloon1 = NODE_BALLOON2D.instance()
-			var new_balloon2 = NODE_BALLOON2D.instance()
-			new_balloon1.type = types.BLACK
-			new_balloon2.type = types.BLACK
-			var new_path1 = balloon.get_parent().duplicate()
-			var new_path2 = balloon.get_parent().duplicate()
-			new_path1.set_offset(new_path1.get_offset()-8)
-			new_path2.set_offset(new_path2.get_offset()+8)
-			new_path1.add_child(new_balloon1)
-			new_path2.add_child(new_balloon2)
-			balloon.get_parent().get_parent().add_child(new_path1)
-			balloon.get_parent().get_parent().add_child(new_path2)
+			create_balloon(balloon,types.BLACK,-8)
+			create_balloon(balloon,types.BLACK,8)
 			balloon.get_parent().queue_free()
 		types.ZEBRA:
-			var new_balloon1 = NODE_BALLOON2D.instance()
-			var new_balloon2 = NODE_BALLOON2D.instance()
-			new_balloon1.type = types.BLACK
-			new_balloon2.type = types.WHITE
-			var new_path1 = balloon.get_parent().duplicate()
-			var new_path2 = balloon.get_parent().duplicate()
-			new_path1.set_offset(new_path1.get_offset()-8)
-			new_path2.set_offset(new_path2.get_offset()+8)
-			new_path1.add_child(new_balloon1)
-			new_path2.add_child(new_balloon2)
-			balloon.get_parent().get_parent().add_child(new_path1)
-			balloon.get_parent().get_parent().add_child(new_path2)
+			create_balloon(balloon,types.WHITE,-8)
+			create_balloon(balloon,types.BLACK,8)
 			balloon.get_parent().queue_free()
 		types.RAINBOW:
-			var new_balloon1 = NODE_BALLOON2D.instance()
-			var new_balloon2 = NODE_BALLOON2D.instance()
-			new_balloon1.type = types.ZEBRA
-			new_balloon2.type = types.ZEBRA
-			var new_path1 = balloon.get_parent().duplicate()
-			var new_path2 = balloon.get_parent().duplicate()
-			new_path1.set_offset(new_path1.get_offset()-8)
-			new_path2.set_offset(new_path2.get_offset()+8)
-			new_path1.add_child(new_balloon1)
-			new_path2.add_child(new_balloon2)
-			balloon.get_parent().get_parent().add_child(new_path1)
-			balloon.get_parent().get_parent().add_child(new_path2)
+			create_balloon(balloon,types.ZEBRA,-8)
+			create_balloon(balloon,types.ZEBRA,8)
 			balloon.get_parent().queue_free()
 		types.CERAMIC:
-			var new_balloon1 = NODE_BALLOON2D.instance()
-			var new_balloon2 = NODE_BALLOON2D.instance()
-			new_balloon1.type = types.RAINBOW
-			new_balloon2.type = types.RAINBOW
-			var new_path1 = balloon.get_parent().duplicate()
-			var new_path2 = balloon.get_parent().duplicate()
-			new_path1.set_offset(new_path1.get_offset()-8)
-			new_path2.set_offset(new_path2.get_offset()+8)
-			new_path1.add_child(new_balloon1)
-			new_path2.add_child(new_balloon2)
-			balloon.get_parent().get_parent().add_child(new_path1)
-			balloon.get_parent().get_parent().add_child(new_path2)
+			create_balloon(balloon,types.RAINBOW,-8)
+			create_balloon(balloon,types.RAINBOW,8)
 			balloon.get_parent().queue_free()
 		types.MOAB:
-			var new_balloon1 = NODE_BALLOON2D.instance()
-			var new_balloon2 = NODE_BALLOON2D.instance()
-			var new_balloon3 = NODE_BALLOON2D.instance()
-			var new_balloon4 = NODE_BALLOON2D.instance()
-			new_balloon1.type = types.CERAMIC
-			new_balloon2.type = types.CERAMIC
-			new_balloon3.type = types.CERAMIC
-			new_balloon4.type = types.CERAMIC
-			var new_path1 = balloon.get_parent().duplicate()
-			var new_path2 = balloon.get_parent().duplicate()
-			var new_path3 = balloon.get_parent().duplicate()
-			var new_path4 = balloon.get_parent().duplicate()
-			new_path1.set_offset(new_path1.get_offset()-24)
-			new_path2.set_offset(new_path2.get_offset()-8)
-			new_path3.set_offset(new_path3.get_offset()+8)
-			new_path4.set_offset(new_path4.get_offset()+24)
-			new_path1.add_child(new_balloon1)
-			new_path2.add_child(new_balloon2)
-			new_path3.add_child(new_balloon3)
-			new_path4.add_child(new_balloon4)
-			balloon.get_parent().get_parent().add_child(new_path1)
-			balloon.get_parent().get_parent().add_child(new_path2)
-			balloon.get_parent().get_parent().add_child(new_path3)
-			balloon.get_parent().get_parent().add_child(new_path4)
+			create_balloon(balloon,types.CERAMIC,-24)
+			create_balloon(balloon,types.CERAMIC,-8)
+			create_balloon(balloon,types.CERAMIC,8)
+			create_balloon(balloon,types.CERAMIC,24)
 			balloon.get_parent().queue_free()
 		types.BFB:
-			var new_balloon1 = NODE_BALLOON2D.instance()
-			var new_balloon2 = NODE_BALLOON2D.instance()
-			var new_balloon3 = NODE_BALLOON2D.instance()
-			var new_balloon4 = NODE_BALLOON2D.instance()
-			new_balloon1.type = types.MOAB
-			new_balloon2.type = types.MOAB
-			new_balloon3.type = types.MOAB
-			new_balloon4.type = types.MOAB
-			var new_path1 = balloon.get_parent().duplicate()
-			var new_path2 = balloon.get_parent().duplicate()
-			var new_path3 = balloon.get_parent().duplicate()
-			var new_path4 = balloon.get_parent().duplicate()
-			new_path1.set_offset(new_path1.get_offset()-24)
-			new_path2.set_offset(new_path2.get_offset()-8)
-			new_path3.set_offset(new_path3.get_offset()+8)
-			new_path4.set_offset(new_path4.get_offset()+24)
-			new_path1.add_child(new_balloon1)
-			new_path2.add_child(new_balloon2)
-			new_path3.add_child(new_balloon3)
-			new_path4.add_child(new_balloon4)
-			balloon.get_parent().get_parent().add_child(new_path1)
-			balloon.get_parent().get_parent().add_child(new_path2)
-			balloon.get_parent().get_parent().add_child(new_path3)
-			balloon.get_parent().get_parent().add_child(new_path4)
+			create_balloon(balloon,types.MOAB,-24)
+			create_balloon(balloon,types.MOAB,-8)
+			create_balloon(balloon,types.MOAB,8)
+			create_balloon(balloon,types.MOAB,24)
 			balloon.get_parent().queue_free()
 		types.ZOMG:
-			var new_balloon1 = NODE_BALLOON2D.instance()
-			var new_balloon2 = NODE_BALLOON2D.instance()
-			var new_balloon3 = NODE_BALLOON2D.instance()
-			var new_balloon4 = NODE_BALLOON2D.instance()
-			new_balloon1.type = types.BFB
-			new_balloon2.type = types.BFB
-			new_balloon3.type = types.BFB
-			new_balloon4.type = types.BFB
-			var new_path1 = balloon.get_parent().duplicate()
-			var new_path2 = balloon.get_parent().duplicate()
-			var new_path3 = balloon.get_parent().duplicate()
-			var new_path4 = balloon.get_parent().duplicate()
-			new_path1.set_offset(new_path1.get_offset()-24)
-			new_path2.set_offset(new_path2.get_offset()-8)
-			new_path3.set_offset(new_path3.get_offset()+8)
-			new_path4.set_offset(new_path4.get_offset()+24)
-			new_path1.add_child(new_balloon1)
-			new_path2.add_child(new_balloon2)
-			new_path3.add_child(new_balloon3)
-			new_path4.add_child(new_balloon4)
-			balloon.get_parent().get_parent().add_child(new_path1)
-			balloon.get_parent().get_parent().add_child(new_path2)
-			balloon.get_parent().get_parent().add_child(new_path3)
-			balloon.get_parent().get_parent().add_child(new_path4)
+			create_balloon(balloon,types.BFB,-24)
+			create_balloon(balloon,types.BFB,-8)
+			create_balloon(balloon,types.BFB,8)
+			create_balloon(balloon,types.BFB,24)
 			balloon.get_parent().queue_free()
 		types.DDT:
-			var new_balloon1 = NODE_BALLOON2D.instance()
-			var new_balloon2 = NODE_BALLOON2D.instance()
-			var new_balloon3 = NODE_BALLOON2D.instance()
-			var new_balloon4 = NODE_BALLOON2D.instance()
-			new_balloon1.type = types.CERAMIC
-			new_balloon2.type = types.CERAMIC
-			new_balloon3.type = types.CERAMIC
-			new_balloon4.type = types.CERAMIC
-			var new_path1 = balloon.get_parent().duplicate()
-			var new_path2 = balloon.get_parent().duplicate()
-			var new_path3 = balloon.get_parent().duplicate()
-			var new_path4 = balloon.get_parent().duplicate()
-			new_path1.set_offset(new_path1.get_offset()-24)
-			new_path2.set_offset(new_path2.get_offset()-8)
-			new_path3.set_offset(new_path3.get_offset()+8)
-			new_path4.set_offset(new_path4.get_offset()+24)
-			new_path1.add_child(new_balloon1)
-			new_path2.add_child(new_balloon2)
-			new_path3.add_child(new_balloon3)
-			new_path4.add_child(new_balloon4)
-			balloon.get_parent().get_parent().add_child(new_path1)
-			balloon.get_parent().get_parent().add_child(new_path2)
-			balloon.get_parent().get_parent().add_child(new_path3)
-			balloon.get_parent().get_parent().add_child(new_path4)
+			create_balloon(balloon,types.CERAMIC,-24)
+			create_balloon(balloon,types.CERAMIC,-8)
+			create_balloon(balloon,types.CERAMIC,8)
+			create_balloon(balloon,types.CERAMIC,24)
 			balloon.get_parent().queue_free()
 		types.BAD:
-			var new_balloon1 = NODE_BALLOON2D.instance()
-			var new_balloon2 = NODE_BALLOON2D.instance()
-			var new_balloon3 = NODE_BALLOON2D.instance()
-			var new_balloon4 = NODE_BALLOON2D.instance()
-			var new_balloon5 = NODE_BALLOON2D.instance()
-			new_balloon1.type = types.CERAMIC
-			new_balloon2.type = types.CERAMIC
-			new_balloon3.type = types.CERAMIC
-			new_balloon4.type = types.CERAMIC
-			new_balloon5.type = types.CERAMIC
-			var new_path1 = balloon.get_parent().duplicate()
-			var new_path2 = balloon.get_parent().duplicate()
-			var new_path3 = balloon.get_parent().duplicate()
-			var new_path4 = balloon.get_parent().duplicate()
-			var new_path5 = balloon.get_parent().duplicate()
-			new_path1.set_offset(new_path1.get_offset()-32)
-			new_path2.set_offset(new_path2.get_offset()-16)
-			new_path3.set_offset(new_path3.get_offset())
-			new_path4.set_offset(new_path4.get_offset()+16)
-			new_path4.set_offset(new_path5.get_offset()+32)
-			new_path1.add_child(new_balloon1)
-			new_path2.add_child(new_balloon2)
-			new_path3.add_child(new_balloon3)
-			new_path4.add_child(new_balloon4)
-			new_path5.add_child(new_balloon5)
-			balloon.get_parent().get_parent().add_child(new_path1)
-			balloon.get_parent().get_parent().add_child(new_path2)
-			balloon.get_parent().get_parent().add_child(new_path3)
-			balloon.get_parent().get_parent().add_child(new_path4)
-			balloon.get_parent().get_parent().add_child(new_path5)
+			create_balloon(balloon,types.DDT,-32)
+			create_balloon(balloon,types.DDT,-16)
+			create_balloon(balloon,types.DDT,0)
+			create_balloon(balloon,types.ZOMG,16)
+			create_balloon(balloon,types.ZOMG,32)
 			balloon.get_parent().queue_free()
+
+func create_balloon(father_balloon,type,offset):
+			var new_balloon = NODE_BALLOON2D.instance()
+			new_balloon.type = types.type
+			var new_path = father_balloon.get_parent().duplicate()
+			new_path.set_offset(new_path.get_offset()+offset)
+			new_path.add_child(new_balloon)
+			father_balloon.get_parent().get_parent().add_child(new_path)
 
 # TODO GET COULEUR
 # TODO GET SPRITE
