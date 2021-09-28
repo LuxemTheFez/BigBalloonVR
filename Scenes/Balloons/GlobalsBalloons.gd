@@ -1,5 +1,5 @@
 extends Node
-class_name GlobalsBalloon
+#class_name GlobalsBalloons
 
 enum types {
 	RED,
@@ -27,11 +27,13 @@ enum power_ups {
 	REGROWTH
 }
 
-var speed = 30
+var speed = 10
+
+var stopMouse = false
 
 onready var NODE_BALLOON2D = preload("res://Scenes/Both/Balloon2D.tscn")
 
-func get_damage(balloon):
+func getDamage(balloon):
 	var value = 0
 	match balloon.type:
 		types.RED:
@@ -221,8 +223,10 @@ func pop(balloon):
 
 func create_balloon(father_balloon,type,offset):
 			var new_balloon = NODE_BALLOON2D.instance()
-			new_balloon.type = types.type
+			new_balloon.type = type
 			var new_path = father_balloon.get_parent().duplicate()
+			if(new_path.get_child_count() > 0):
+				new_path.get_child(0).queue_free()
 			new_path.set_offset(new_path.get_offset()+offset)
 			new_path.add_child(new_balloon)
 			father_balloon.get_parent().get_parent().add_child(new_path)
@@ -231,39 +235,48 @@ func getColor(balloon):
 	var value = Color(1,1,1,1)
 	match balloon.type:
 		types.RED:
-			value = Color(1,0,0,1)
+			value = Color(0.93,0.07,00.7,1)
 		types.BLUE:
-			value = Color(0,0,1,1)
+			value = Color(0.13,0.56,0.87,1)
 		types.GREEN:
-			value = Color(0,1,0,1)
+			value = Color(0.45,0.65,0.04,1)
 		types.YELLOW:
-			value = Color(1,1,1,1)
+			value = Color(1,0.84,0.05,1)
 		types.PINK:
-			value = Color(1,1,1,1)
+			value = Color(0.94,0.28,0.35,1)
 		types.BLACK:
-			value = Color(1,1,1,1)
+			value = Color(0.06,0.06,0.06,1)
 		types.WHITE:
-			value = Color(1,1,1,1)
+			value = Color(0.83,0.83,0.83,1)
 		types.PURPLE:
-			value = Color(1,1,1,1)
+			value = Color(0.55,0.1,0.875,1)
 		types.LEAD:
-			value = Color(1,1,1,1)
+			value = Color(0.5,0.5,0.5,1)
 		types.ZEBRA:
-			value = Color(1,1,1,1)
+			value = Color(0.83,0.83,0.83,0.7)
 		types.RAINBOW:
 			value = Color(1,1,1,1)
 		types.CERAMIC:
-			value = Color(1,1,1,1)
+			value = Color(0.73,0.416,0.118,1)
 		types.MOAB:
-			value = Color(1,1,1,1)
+			value = Color(0,0.55,0.85,1)
 		types.BFB:
-			value = Color(1,1,1,1)
+			value = Color(0.73,0,0,1)
 		types.ZOMG:
-			value = Color(1,1,1,1)
+			value = Color(0.3,0.87,0,1)
 		types.DDT:
-			value = Color(1,1,1,1)
+			value = Color(0.21,0.23,0.20,1)
 		types.BAD:
-			value = Color(1,1,1,1)
+			value = Color(0.6,0.15,0.65,1)
 	return value
 	
-# TODO GET SPRITE
+func getSprite(balloon):
+	var value = "res://Assets/balloon.png"
+	if(isZeppelin(balloon)):
+		value = "res://Assets/zeppelin.png"
+	return value
+
+func isZeppelin(balloon):
+	var t = balloon.type
+	var zeppelins = [types.MOAB,types.BFB,types.ZOMG,types.DDT,types.BAD]
+	return t in zeppelins
