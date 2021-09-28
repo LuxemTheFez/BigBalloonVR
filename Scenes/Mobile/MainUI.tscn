@@ -16,7 +16,7 @@ mouse_filter = 1
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false,
-"_edit_vertical_guides_": [ 99.6254 ]
+"_edit_vertical_guides_": [ 98.3238 ]
 }
 
 [node name="Panel" type="Panel" parent="."]
@@ -48,13 +48,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="Panel/VBoxContainer"]
-modulate = Color( 1, 0.0509804, 0.0509804, 1 )
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
 margin_right = 152.0
 margin_bottom = 152.0
-rect_min_size = Vector2( 152, 152 )
+custom_constants/separation = 0
+
+[node name="VSeparator2" type="VSeparator" parent="Panel/VBoxContainer/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 13.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer"]
+modulate = Color( 1, 0.0509804, 0.0509804, 1 )
+margin_left = 13.0
+margin_right = 138.6
+margin_bottom = 152.0
+rect_min_size = Vector2( 125.6, 152 )
 texture_normal = ExtResource( 1 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 138.0
+margin_right = 152.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -77,4 +99,4 @@ step = 1.0
 value = 50.0
 percent_visible = false
 
-[connection signal="pressed" from="Panel/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]

@@ -227,5 +227,43 @@ func create_balloon(father_balloon,type,offset):
 			new_path.add_child(new_balloon)
 			father_balloon.get_parent().get_parent().add_child(new_path)
 
-# TODO GET COLOR
+func getColor(balloon):
+	var value = Color(1,1,1,1)
+	match balloon.type:
+		types.RED:
+			value = Color(1,0,0,1)
+		types.BLUE:
+			value = Color(0,0,1,1)
+		types.GREEN:
+			value = Color(0,1,0,1)
+		types.YELLOW:
+			value = Color(1,1,1,1)
+		types.PINK:
+			value = Color(1,1,1,1)
+		types.BLACK:
+			value = Color(1,1,1,1)
+		types.WHITE:
+			value = Color(1,1,1,1)
+		types.PURPLE:
+			value = Color(1,1,1,1)
+		types.LEAD:
+			value = Color(1,1,1,1)
+		types.ZEBRA:
+			value = Color(1,1,1,1)
+		types.RAINBOW:
+			value = Color(1,1,1,1)
+		types.CERAMIC:
+			value = Color(1,1,1,1)
+		types.MOAB:
+			value = Color(1,1,1,1)
+		types.BFB:
+			value = Color(1,1,1,1)
+		types.ZOMG:
+			value = Color(1,1,1,1)
+		types.DDT:
+			value = Color(1,1,1,1)
+		types.BAD:
+			value = Color(1,1,1,1)
+	return value
+	
 # TODO GET SPRITE

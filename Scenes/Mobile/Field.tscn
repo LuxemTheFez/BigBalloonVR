@@ -65,7 +65,6 @@ tile_data = PoolIntArray( 131075, 0, 262144, 131082, 0, 196612, 131089, 0, 1, 13
 follow_viewport_enable = true
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -79,27 +78,21 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="FirstPath" type="Path2D" parent="."]
-visible = false
 curve = SubResource( 1 )
 
 [node name="SecondPath" type="Path2D" parent="."]
-visible = false
 curve = SubResource( 2 )
 
 [node name="ThirdPath" type="Path2D" parent="."]
-visible = false
 curve = SubResource( 3 )
 
 [node name="FourthPath" type="Path2D" parent="."]
-visible = false
 curve = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 position = Vector2( 1048, 304 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2( 48, 0 )
 shape = SubResource( 5 )
 

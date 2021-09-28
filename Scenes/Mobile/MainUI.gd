@@ -13,7 +13,7 @@ var color_min_value = 71.0
 var color_max_value = 245.0
 var color_step = 1.0
 
-onready var button = $Panel/VBoxContainer/TextureButton
+onready var button = $Panel/VBoxContainer/HBoxContainer/TextureButton
 var etape = 0
 
 func _ready():
