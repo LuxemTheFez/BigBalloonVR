@@ -4,7 +4,7 @@ class_name Balloon2D
 onready var pathToFollow = get_parent()
 
 var speed = 300
-var type = GlobalsBalloons.types.CERAMIC setget update
+var type = GlobalsBalloons.types.RED setget update
 var color = Color(1,1,1,1)
 var sprite = "res://Assets/balloon.png"
 var damage = 0

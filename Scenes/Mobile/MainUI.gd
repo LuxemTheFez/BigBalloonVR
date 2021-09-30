@@ -14,6 +14,9 @@ var color_max_value = 245.0
 var color_step = 1.0
 
 onready var button = $Panel/VBoxContainer/HBoxContainer/TextureButton
+onready var progressHpVRMan = $Panel/VBoxContainer/ProgressHpVRMan
+onready var progressBarAir = $Panel/VBoxContainer/HBoxContainer/TextureButton/HBoxContainer/ProgressAir
+onready var labelAir = $Panel/VBoxContainer/HBoxContainer/TextureButton/HBoxContainer/LabelAir
 var step = 0
 
 onready var imgPump0 = preload("res://Assets/pump/inflator-1.png")
@@ -23,7 +26,7 @@ onready var imgPump3 = preload("res://Assets/pump/inflator-4.png")
 onready var imgsPump = [imgPump0,imgPump1,imgPump2,imgPump3]
 
 var air = 0
-var slowness = 30.0
+var slowness = 2.0
 
 func _ready():
 	button.self_modulate = Color(0.93,0.07,00.7,1)
@@ -33,8 +36,9 @@ func _ready():
 	fill_air()
 
 func _process(delta):
-	$Panel/VBoxContainer/ProgressBar.value = Globals.hpVRMan
-	$Panel/VBoxContainer/HBoxContainer/TextureButton/ProgressBar.value = air
+	progressHpVRMan.value = Globals.hpVRMan
+	progressBarAir.value = air
+	labelAir.text = str(progressBarAir.value) + "%"
 	
 #	match step:
 #		0:
