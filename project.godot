@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="BigBalloonVr"
-run/main_scene="res://Scenes/Hub.tscn"
+run/main_scene="res://Scenes/Vr/test.tscn"
 config/icon="res://Assets/balloon.png"
 
 [autoload]

@@ -8,6 +8,7 @@
 [ext_resource path="res://addons/godot_ovrmobile/example_scenes/oculus_hand_tracker.gd" type="Script" id=6]
 
 [node name="ARVROrigin" type="ARVROrigin"]
+world_scale = 1.4
 script = ExtResource( 4 )
 
 [node name="ARVRCamera" type="ARVRCamera" parent="."]

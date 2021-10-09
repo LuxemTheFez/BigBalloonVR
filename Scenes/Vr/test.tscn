@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Vr/test.gd" type="Script" id=1]
+[ext_resource path="res://addons/godot_ovrmobile/example_scenes/touch_controller.dae" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Vr/controller.gd" type="Script" id=3]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 0.2, 0.2, 0.2 )
+
+[sub_resource type="CapsuleMesh" id=2]
+
+[node name="Main" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="ARVROrigin" type="ARVROrigin" parent="."]
+world_scale = 1.4
+
+[node name="ARVRCamera" type="ARVRCamera" parent="ARVROrigin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0 )
+
+[node name="left" type="ARVRController" parent="ARVROrigin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178, 1.944, -0.741 )
+script = ExtResource( 3 )
+
+[node name="touch_controller" parent="ARVROrigin/left" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0 )
+
+[node name="right" type="ARVRController" parent="ARVROrigin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0680444, 1.942, -0.747 )
+controller_id = 2
+script = ExtResource( 3 )
+
+[node name="touch_controller" parent="ARVROrigin/right" instance=ExtResource( 2 )]
+transform = Transform( 1, -8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0, -1, 0, 0, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.856114, -0.516787, 0, 0.516787, 0.856114, 0, 0, 0, 1, 0.423841, 1.72186, -1.01018 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.070714, -0.814597, 0.5757, 0, 0.577145, 0.816642, -0.997497, 0.057748, -0.0408122, 0.581983, 2.63728, 0 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.321875, -0.382618, 0, 0.382618, 0.321875, 0, 1.99978, -2.42549 )
+mesh = SubResource( 2 )
+material/0 = null

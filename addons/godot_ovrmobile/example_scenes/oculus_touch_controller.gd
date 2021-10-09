@@ -36,11 +36,41 @@ var _was_world_scale = 1.0
 # Dictionary tracking the remaining duration for controllers vibration
 var _controllers_vibration_duration = {}
 
+var controller_velocity = Vector3(0,0,0)
+var prior_controller_position = Vector3(0,0,0)
+var prior_controller_velocities = []
+
 onready var camera : ARVRCamera = origin.get_node("ARVRCamera")
 
 func _physics_process_update_controller_velocity(delta):
-	pass
+	
 
+	if $".".is_button_pressed(2):
+			
+		
+		controller_velocity = Vector3(0,0,0)
+
+		if prior_controller_velocities.size() > 0:
+			for vel in prior_controller_velocities:
+				controller_velocity += vel
+
+			controller_velocity = controller_velocity / prior_controller_velocities.size()
+
+		var relative_controller_position = (global_transform.origin - prior_controller_position)
+
+		controller_velocity += relative_controller_position
+
+		prior_controller_velocities.append(relative_controller_position)
+
+		prior_controller_position = global_transform.origin
+
+		controller_velocity /= delta;
+
+		if prior_controller_velocities.size() > 30:
+			prior_controller_velocities.remove(0)
+			
+		get_node("../Hud/Label").set_text(str(controller_velocity))
+		
 func _ready():
 	ovr_input = load("res://addons/godot_ovrmobile/OvrInput.gdns")
 	if (ovr_input): ovr_input = ovr_input.new()
@@ -59,6 +89,7 @@ func _process(delta_t):
 	_check_move(delta_t)
 	_check_worldscale(origin.world_scale)
 	_update_controllers_vibration(delta_t)
+	_physics_process_update_controller_velocity(delta_t)
 
 
 func _get_tracker_label():
@@ -151,6 +182,8 @@ func _on_LeftTouchController_button_pressed(button):
 
 	if (button == CONTROLLER_BUTTON.XA):
 		_start_controller_vibration(40, 0.5)
+	if (button == CONTROLLER_BUTTON.GRIP_TRIGGER):
+		get_node("../Hud/Label").set_text(get_node("../Hud/Label").text + "C'est le pouet bouton")
 
 
 func _on_RightTouchController_button_pressed(button):
@@ -163,7 +196,7 @@ func _on_RightTouchController_button_pressed(button):
 
 	if (button == CONTROLLER_BUTTON.XA):
 		_start_controller_vibration(40, 0.5)
-	
+
 
 
 func _on_RightTouchController_button_release(button):
