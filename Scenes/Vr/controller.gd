@@ -6,8 +6,10 @@ var prior_controller_velocities = []
 
 const max_speed = 5.0
 const min_speed = 1.0
+onready var joueur = get_node("../..")
 
 var armswinger_button 
+
 
 var camera
 
@@ -16,6 +18,9 @@ var camera_transform
 var armswinger_speeds = []
 
 var velocity = Vector3(0.0, 0.0, 0.0)
+
+var tabSpeed = []
+var oldPos = null
 
 enum Buttons {
 	VR_BUTTON_BY = 1,
@@ -40,7 +45,6 @@ func _ready():
 	
 	camera = get_node("../ARVRCamera")
 	
-	camera_transform = camera.global_transform
 	armswinger_button = Buttons.VR_GRIP
 
 func _physics_process(delta):
@@ -48,68 +52,61 @@ func _physics_process(delta):
 		_physics_process_update_controller_velocity(delta)
 
 func _physics_process_update_controller_velocity(delta):
+	
 	controller_velocity = Vector3(0,0,0)
+	
+	var curr_transform = joueur.global_transform
+	
+	var vitesse_moyenne = 0
 
-	if prior_controller_velocities.size() > 0:
-		for vel in prior_controller_velocities:
-			controller_velocity += vel
+	if is_button_pressed(armswinger_button):
+		
+		
+		if oldPos==null:
+			oldPos=self.translation.y
+		else:
 
-		controller_velocity = controller_velocity / prior_controller_velocities.size()
+			var calcul = stepify((self.translation.y-oldPos)/delta, 0.01)
 
-	var relative_controller_position = (global_transform.origin - prior_controller_position)
+			tabSpeed.append(sqrt(pow(calcul,2)))
+			oldPos = null
 
-	controller_velocity += relative_controller_position
+		if tabSpeed.size() > 2:
+			tabSpeed.pop_front()
+		
+		print(self.translation.y)
+		print(tabSpeed)
+		print("appyé")
+		
+		vitesse_moyenne = moyenne(tabSpeed)
+		
 
-	prior_controller_velocities.append(relative_controller_position)
+#		print(vitesse_moyenne)
 
-	prior_controller_position = global_transform.origin
+		var dir_forward = camera.rotation.y
+		
+		var vectro = Vector3(-sin(dir_forward),0,-cos(dir_forward))
+		velocity = vectro * vitesse_moyenne * ARVRServer.world_scale
 
-	controller_velocity /= delta;
+		#Check if the speed is lower than the minimum velocity, if it is, apply the minimum velocity instead
 
-	if prior_controller_velocities.size() > 30:
-		prior_controller_velocities.remove(0)
+		
+		print(velocity)
+	#clear the armswinger speeds array otherwise the velocity will be remembered
+	elif !is_button_pressed(armswinger_button):
+		
+		tabSpeed.clear()
+		velocity = Vector3.ZERO
+		oldPos = null
 
-
-		if is_button_pressed(armswinger_button):
-			print("appyé")
-			#Get the current local controller speed
-			var current_controller_speed =  prior_controller_velocities.size()
-			
-			#add controller speed to the list of average speeds
-			armswinger_speeds.append(current_controller_speed)
-			
-			#if array speed is larger than 1second worth of data, remove the first one
-			#TODO: make it based on 1 second instead of just the amount of frames
-			if armswinger_speeds.size() > 120:
-				armswinger_speeds.remove(0)
-			#add all speeds together
-			var total_speed = 0
-			for i in armswinger_speeds:
-				total_speed += i
-			#get average speed
-			var average_controller_speed = total_speed/armswinger_speeds.size()
-			
-			#apply the velocity based on either headset direction or controller direction
-			#Direction based on headset orientation
-
-			var dir_forward = camera_transform.basis.z
-			dir_forward.y = 0.0	
-			velocity = (-dir_forward).normalized() * average_controller_speed * delta * max_speed * ARVRServer.world_scale
-			
-			#Check if the speed is lower than the minimum velocity, if it is, apply the minimum velocity instead
-			var min_velocity = (-dir_forward).normalized() * delta * min_speed * ARVRServer.world_scale
-			if(min_velocity.size() > velocity.size()):
-				velocity = min_velocity
-
-		#clear the armswinger speeds array otherwise the velocity will be remembered
-		elif !is_button_pressed(armswinger_button):
-			armswinger_speeds.clear()
-			print("relaché")
-		# apply move and slide to our kinematic body
-#		velocity = .move_and_slide(velocity, Vector3(0.0, 1.0, 0.0))
-			
-		# now use our new position to move our origin point
-#		var movement = (player_controller.kinematicbody.global_transform.origin - curr_transform.origin)
-#		player_controller.global_transform.origin += movement
-
-
+		
+	joueur.move_and_slide(velocity, Vector3(0.0, 1.0, 0.0))
+		
+func moyenne(tab: Array):
+	var res = 0
+	if tab.size()!=0:
+		var compteur = 0
+		for i in tab:
+			compteur+=i
+		res = compteur/tab.size()
+	return res
