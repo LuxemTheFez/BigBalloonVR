@@ -33,9 +33,9 @@ var stopMouse = false
 
 onready var NODE_BALLOON2D = preload("res://Scenes/Both/Balloon2D.tscn")
 
-func getDamage(balloon):
+func getDamage(balloonType):
 	var value = 0
-	match balloon.type:
+	match balloonType:
 		types.RED:
 			value = 1
 		types.BLUE:
@@ -72,9 +72,9 @@ func getDamage(balloon):
 			value = 55760
 	return value
 
-func getHp(balloon):
+func getHp(balloonType):
 	var value = 0
-	match balloon.type:
+	match balloonType:
 		types.RED:
 			value = 1
 		types.BLUE:
@@ -111,9 +111,9 @@ func getHp(balloon):
 			value = 20000
 	return value
 
-func getSpeed(balloon):
+func getSpeed(balloonType):
 	var value = 0
-	match balloon.type:
+	match balloonType:
 		types.RED:
 			value = 1
 		types.BLUE:
@@ -165,6 +165,7 @@ func pop(balloon):
 		types.BLACK:
 			create_balloon(balloon,types.PINK,-8)
 			create_balloon(balloon,types.PINK,8)
+			balloon.get_parent().queue_free()
 		types.WHITE:
 			create_balloon(balloon,types.PINK,-8)
 			create_balloon(balloon,types.PINK,8)
@@ -231,11 +232,11 @@ func create_balloon(father_balloon,type,offset):
 			new_path.add_child(new_balloon)
 			father_balloon.get_parent().get_parent().add_child(new_path)
 
-func getColor(balloon):
+func getColor(balloonType):
 	var value = Color(1,1,1,1)
-	match balloon.type:
+	match balloonType:
 		types.RED:
-			value = Color(0.93,0.07,00.7,1)
+			value = Color(0.93,0.07,0.07,1)
 		types.BLUE:
 			value = Color(0.13,0.56,0.87,1)
 		types.GREEN:
@@ -272,11 +273,11 @@ func getColor(balloon):
 	
 func getSprite(balloon):
 	var value = "res://Assets/balloon.png"
-	if(isZeppelin(balloon)):
+	if(isZeppelin(balloon.type)):
 		value = "res://Assets/zeppelin.png"
 	return value
 
-func isZeppelin(balloon):
-	var t = balloon.type
+func isZeppelin(balloonType):
+	var t = balloonType
 	var zeppelins = [types.MOAB,types.BFB,types.ZOMG,types.DDT,types.BAD]
 	return t in zeppelins
