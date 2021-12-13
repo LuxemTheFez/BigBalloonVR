@@ -53,6 +53,7 @@ config/icon="res://Assets/balloon.png"
 Globals="*res://Scenes/Both/Globals.gd"
 GlobalsBalloons="*res://Scenes/Balloons/GlobalsBalloons.gd"
 GlobalsPump="*res://Scenes/Mobile/GlobalsPump.gd"
+Network="*res://Script/Network.gd"
 
 [display]
 

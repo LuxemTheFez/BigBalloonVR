@@ -78,7 +78,9 @@ func _on_TextureButton_pressed():
 	if(air >= air_max):
 		air = 0
 		emit_signal("inflatorClicked",typeBalloon,pathSelected)
+		Network.spawnBalloon(typeBalloon,pathSelected)
 		pump()
+		
 
 func pump():
 	button.texture_normal = imgPump0
