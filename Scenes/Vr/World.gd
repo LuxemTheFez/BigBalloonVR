@@ -16,7 +16,7 @@ onready var idBalloon = 0
 func _ready():
 	player = NODE_PLAYER.instance()
 	# To comment to play on editor
-	add_child(player)
+#	add_child(player)
 	player.transform.origin = Vector3(95, 0,0)
 	randomize()
 	Network.joinServer()
@@ -53,4 +53,4 @@ func updateHealth(value):
 
 func _on_Button_pressed():
 	print("prot")
-	spawnBalloon(GlobalsBalloons.types.PINK,paths[randi() % paths.size()])
+	spawnBalloon(GlobalsBalloons.types.PINK,randi() % paths.size())

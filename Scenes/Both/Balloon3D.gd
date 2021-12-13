@@ -29,6 +29,7 @@ func _on_HitboxBallon_area_shape_entered(area_id, area, area_shape, local_shape)
 	print(area.get_parent().name)
 	if(area.get_parent().name == "dagueRight" or area.get_parent().name == "dagueLeft"):
 		print("aie")
+		rpc_id(1, "pop", get_parent().name)
 
 
 func _on_HitboxBallon_area_shape_exited(area_id, area, area_shape, local_shape):
