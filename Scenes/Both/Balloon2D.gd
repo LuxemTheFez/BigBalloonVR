@@ -43,12 +43,12 @@ func MovementLoop(delta):
 
 func update(value = GlobalsBalloons.types.RED):
 	type = value
-	speed = GlobalsBalloons.speed * GlobalsBalloons.getSpeed(self)
-	color = GlobalsBalloons.getColor(self)
+	speed = GlobalsBalloons.speed * GlobalsBalloons.getSpeed(value)
+	color = GlobalsBalloons.getColor(value)
 	sprite = GlobalsBalloons.getSprite(self)
 	$Sprite.modulate = color
 	$Sprite.texture = load(sprite)
-	if(GlobalsBalloons.isZeppelin(self)):
+	if(GlobalsBalloons.isZeppelin(value)):
 		$Sprite.set_flip_h(true)
 	else:
 		$Sprite.set_flip_h(false)

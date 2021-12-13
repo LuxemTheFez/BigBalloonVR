@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://tileset_map.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Mobile/MainUI.tscn" type="PackedScene" id=2]
@@ -27,11 +27,6 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 16, 10.8125 )
-
-[sub_resource type="Curve2D" id=6]
-_data = {
-"points": PoolVector2Array(  )
-}
 
 [node name="Field" type="Node2D"]
 script = ExtResource( 4 )
@@ -111,8 +106,5 @@ shape = SubResource( 5 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 304 )
 current = true
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 6 )
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_Area2D_area_shape_entered"]

@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.505882, 0.505882, 0.505882, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 3, 3, 3 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.0784314, 0.611765, 0.698039, 1 )
+
+[sub_resource type="PrismMesh" id=4]
+material = SubResource( 3 )
+size = Vector3( 3.5, 2, 3.5 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.517647, 0.407843, 0.294118, 1 )
+
+[sub_resource type="CubeMesh" id=6]
+material = SubResource( 5 )
+size = Vector3( 0.6, 1.3, 0.1 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.694118, 0.945098, 0.972549, 1 )
+
+[sub_resource type="CubeMesh" id=8]
+material = SubResource( 7 )
+size = Vector3( 0.6, 0.6, 0.01 )
+
+[node name="MaisonBleu" type="Spatial"]
+
+[node name="Cube" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+mesh = SubResource( 2 )
+
+[node name="Toit" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+mesh = SubResource( 4 )
+
+[node name="Porte" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 1.5 )
+mesh = SubResource( 6 )
+
+[node name="FaceAvant" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0 )
+
+[node name="Fenetre1" type="MeshInstance" parent="FaceAvant"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 1.5 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="Fenetre2" type="MeshInstance" parent="FaceAvant"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -0.65, 1.5 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="Fenetre3" type="MeshInstance" parent="FaceAvant"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -0.65, 1.5 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="FaceDroite" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, -8.74228e-08, -1, 0, -1, 8.74228e-08, -1, 3.82137e-15, 4.37114e-08, 0, 1.65, 0 )
+
+[node name="Fenetre1" type="MeshInstance" parent="FaceDroite"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 1.5 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="Fenetre2" type="MeshInstance" parent="FaceDroite"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -0.65, 1.5 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="Fenetre3" type="MeshInstance" parent="FaceDroite"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -0.65, 1.5 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="FaceGauche" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 8.74228e-08, 1, 0, -1, 8.74228e-08, 1, 3.82137e-15, 4.37114e-08, 0, 1.65, 0 )
+
+[node name="Fenetre1" type="MeshInstance" parent="FaceGauche"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 1.5 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="Fenetre2" type="MeshInstance" parent="FaceGauche"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -0.65, 1.5 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="Fenetre3" type="MeshInstance" parent="FaceGauche"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -0.65, 1.5 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="FaceArriere" type="Spatial" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.65, 0 )
+
+[node name="Fenetre1" type="MeshInstance" parent="FaceArriere"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 1.5 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="Fenetre2" type="MeshInstance" parent="FaceArriere"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -0.65, 1.5 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="Fenetre3" type="MeshInstance" parent="FaceArriere"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -0.65, 1.5 )
+mesh = SubResource( 8 )
+material/0 = null
