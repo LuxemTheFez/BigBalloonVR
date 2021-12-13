@@ -53,4 +53,4 @@ func updateHealth(value):
 
 func _on_Button_pressed():
 	print("prot")
-	spawnBalloon(GlobalsBalloons.types.PINK,paths[randi() % paths.size()])
+	spawnBalloon(GlobalsBalloons.types.PINK,randi() % paths.size())
