@@ -1,9 +1,10 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Scenes/Vr/Obstacles/MaisonBleue.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Vr/World.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Vr/Obstacles/MaisonRouge.tscn" type="PackedScene" id=3]
 [ext_resource path="res://chemin_material.tres" type="Material" id=4]
+[ext_resource path="res://Scenes/Vr/Obstacles/Rocks.tscn" type="PackedScene" id=5]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -250,6 +251,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -20.5 )
 
 [node name="MaisonRouge2" parent="Obstacles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -45.5 )
+
+[node name="Rocks" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 300, 0, 0, 0, 300, 0, 0, 0, 300, 0, 1.4, 0 )
 
 [node name="Chemins" type="Spatial" parent="."]
 
