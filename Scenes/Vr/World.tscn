@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Scenes/Vr/Obstacles/MaisonBleue.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Vr/World.gd" type="Script" id=2]
@@ -74,6 +74,13 @@ bake_interval = 5.0
 _data = {
 "points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -100, 0, -40, 0, 0, 0, 0, 0, 0, -64, 0, -40, 0, 0, 0, 0, 0, 0, -64, 0, -24, 0, 0, 0, 0, 0, 0, -32, 0, -24, 0, 0, 0, 0, 0, 0, -32, 0, -40, 0, 0, 0, 0, 0, 0, 16, 0, -40, 0, 0, 0, 0, 0, 0, 16, 0, -24, 0, 0, 0, 0, 0, 0, 48, 0, -24, 0, 0, 0, 0, 0, 0, 48, 0, -40, 0, 0, 0, 0, 0, 0, 72, 0, -40, 0, 0, 0, 0, 0, 0, 72, 0, -16, 0, 0, 0, 0, 0, 0, 88, 0, -16, 0, 0, 0, 0, 0, 0, 88, 0, 0, 0, 0, 0, 0, 0, 0, 104, 0, 0 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=45]
+bake_interval = 5.0
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -100, 0, -16, 0, 0, 0, 0, 0, 0, 88, 0, -16, 0, 0, 0, 0, 0, 0, 88.0792, 0, -0.00951126, 0, 0, 0, 0, 0, 0, 104.008, 0, 0.000325595 ),
+"tilts": PoolRealArray( 0, 0, 0, 0 )
 }
 
 [sub_resource type="Curve3D" id=14]
@@ -264,7 +271,7 @@ transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 109.783, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.3032, 22.8717 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 127, 10.3032, -0.128308 )
 current = true
 far = 8192.0
 
@@ -352,7 +359,7 @@ transform = Transform( -237.613, 0, -183.139, 0, 300, 0, 183.139, 0, -237.613, 3
 curve = SubResource( 13 )
 
 [node name="Path2" type="Path" parent="Chemins"]
-curve = null
+curve = SubResource( 45 )
 
 [node name="Path3" type="Path" parent="Chemins"]
 curve = SubResource( 14 )
@@ -518,6 +525,8 @@ material/0 = null
 
 [node name="COIN" parent="." instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 0, -1.3943, 0 )
+
+[node name="Bridges" type="Spatial" parent="."]
 
 [connection signal="area_shape_entered" from="House" to="." method="_on_House_area_shape_entered"]
 [connection signal="pressed" from="Camera/Control/Button" to="." method="_on_Button_pressed"]
