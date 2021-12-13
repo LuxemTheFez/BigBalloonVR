@@ -4,7 +4,7 @@ var network = NetworkedMultiplayerENet.new()
 var port:int = 1770
 var maxPlayers:int = 2
 var playerStateCollection = {}
-
+var playerId = []
 
 func _ready():
 	network.create_server(port, maxPlayers)
@@ -18,9 +18,13 @@ func _ready():
 
 func _player_connected(id):
 	print("Le joueur d'id : ", id, " s'est connecté")
-
+	playerId.append(id)
 
 func _player_disconnected(id):
 	print("Le joueur d'id : ", id, " s'est deconnecté")
 
-
+remote func spawnBalloon(type,path):
+	var id = get_tree().get_rpc_sender_id()
+	for player in playerId:
+		if player!=id:
+			rpc_id(player, "spawnBalloon3D", type,path)
