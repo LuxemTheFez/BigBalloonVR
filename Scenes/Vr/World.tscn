@@ -1,16 +1,10 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scenes/Vr/Obstacles/MaisonBleue.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Vr/World.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Vr/Obstacles/MaisonRouge.tscn" type="PackedScene" id=3]
-[ext_resource path="res://chemin_material.tres" type="Material" id=4]
 
 [sub_resource type="PlaneMesh" id=1]
 
-[sub_resource type="SpatialMaterial" id=9]
-albedo_color = Color( 0.462745, 0.717647, 0.223529, 1 )
-
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.200712, 1, 0.204225 )
 
 [sub_resource type="StyleBoxFlat" id=3]
@@ -65,129 +59,13 @@ _data = {
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 }
 
-[sub_resource type="CubeMesh" id=10]
-material = ExtResource( 4 )
-size = Vector3( 36, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=11]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 17 )
-
-[sub_resource type="CubeMesh" id=12]
-material = ExtResource( 4 )
-size = Vector3( 33, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=13]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 21 )
-
-[sub_resource type="CubeMesh" id=14]
-material = ExtResource( 4 )
-size = Vector3( 48, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=15]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 17 )
-
-[sub_resource type="CubeMesh" id=16]
-material = ExtResource( 4 )
-size = Vector3( 33, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=17]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 17 )
-
-[sub_resource type="CubeMesh" id=18]
-material = ExtResource( 4 )
-size = Vector3( 25, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=19]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 28 )
-
-[sub_resource type="CubeMesh" id=30]
-material = ExtResource( 4 )
-size = Vector3( 188, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=31]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 17 )
-
-[sub_resource type="CubeMesh" id=32]
-material = ExtResource( 4 )
-size = Vector3( 16, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=37]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 3 )
-
-[sub_resource type="CubeMesh" id=33]
-material = ExtResource( 4 )
-size = Vector3( 188, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=34]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 17 )
-
-[sub_resource type="CubeMesh" id=38]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 3 )
-
-[sub_resource type="CubeMesh" id=20]
-material = ExtResource( 4 )
-size = Vector3( 36, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=21]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 17 )
-
-[sub_resource type="CubeMesh" id=22]
-material = ExtResource( 4 )
-size = Vector3( 33, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=23]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 18 )
-
-[sub_resource type="CubeMesh" id=24]
-material = ExtResource( 4 )
-size = Vector3( 48, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=25]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 17 )
-
-[sub_resource type="CubeMesh" id=26]
-material = ExtResource( 4 )
-size = Vector3( 33, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=27]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 17 )
-
-[sub_resource type="CubeMesh" id=28]
-material = ExtResource( 4 )
-size = Vector3( 25, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=29]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 25 )
-
-[sub_resource type="CubeMesh" id=35]
-material = ExtResource( 4 )
-size = Vector3( 8, 0.01, 2 )
-
-[sub_resource type="CubeMesh" id=36]
-material = ExtResource( 4 )
-size = Vector3( 2, 0.01, 7 )
-
 [node name="World" type="Spatial"]
 script = ExtResource( 2 )
 
 [node name="Ground" type="MeshInstance" parent="."]
 transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0 )
 mesh = SubResource( 1 )
-material/0 = SubResource( 9 )
+material/0 = null
 
 [node name="House" type="Area" parent="."]
 transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 109.783, 0, 0 )
@@ -236,20 +114,31 @@ __meta__ = {
 
 [node name="Obstacles" type="Spatial" parent="."]
 
-[node name="MaisonBleue" parent="Obstacles" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 32 )
+[node name="CSGBox" type="CSGBox" parent="Obstacles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+use_collision = true
+width = 6.0
+height = 8.0
 
-[node name="MaisonBleue2" parent="Obstacles" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 12 )
+[node name="CSGBox2" type="CSGBox" parent="Obstacles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 4, -4 )
+use_collision = true
+width = 6.0
+height = 8.0
+depth = 10.0
 
-[node name="MaisonBleue3" parent="Obstacles" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -45.5 )
+[node name="CSGBox3" type="CSGBox" parent="Obstacles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61, 4, 5 )
+use_collision = true
+width = 6.0
+height = 8.0
+depth = 10.0
 
-[node name="MaisonRouge" parent="Obstacles" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -20.5 )
-
-[node name="MaisonRouge2" parent="Obstacles" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -45.5 )
+[node name="CSGBox4" type="CSGBox" parent="Obstacles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 11, 0 )
+use_collision = true
+height = 4.0
+depth = 20.0
 
 [node name="Chemins" type="Spatial" parent="."]
 
@@ -264,162 +153,6 @@ curve = SubResource( 7 )
 
 [node name="Path4" type="Path" parent="Chemins"]
 curve = SubResource( 8 )
-
-[node name="CheminsMesh" type="Spatial" parent="."]
-
-[node name="Chemin1" type="Spatial" parent="CheminsMesh"]
-
-[node name="MeshInstance" type="MeshInstance" parent="CheminsMesh/Chemin1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 0.005, -40 )
-mesh = SubResource( 10 )
-material/0 = null
-
-[node name="MeshInstance2" type="MeshInstance" parent="CheminsMesh/Chemin1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0.005, -32.5 )
-mesh = SubResource( 11 )
-material/0 = null
-
-[node name="MeshInstance3" type="MeshInstance" parent="CheminsMesh/Chemin1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.504, 0.005, -24 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance4" type="MeshInstance" parent="CheminsMesh/Chemin1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0.005, -33.5 )
-mesh = SubResource( 13 )
-material/0 = null
-
-[node name="MeshInstance5" type="MeshInstance" parent="CheminsMesh/Chemin1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.005, -40 )
-mesh = SubResource( 14 )
-material/0 = null
-
-[node name="MeshInstance6" type="MeshInstance" parent="CheminsMesh/Chemin1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.005, -32.5 )
-mesh = SubResource( 15 )
-material/0 = null
-
-[node name="MeshInstance7" type="MeshInstance" parent="CheminsMesh/Chemin1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5, 0.005, -24 )
-mesh = SubResource( 16 )
-material/0 = null
-
-[node name="MeshInstance8" type="MeshInstance" parent="CheminsMesh/Chemin1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0.005, -32.5 )
-mesh = SubResource( 17 )
-material/0 = null
-
-[node name="MeshInstance9" type="MeshInstance" parent="CheminsMesh/Chemin1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5, 0.005, -40 )
-mesh = SubResource( 18 )
-material/0 = null
-
-[node name="MeshInstance10" type="MeshInstance" parent="CheminsMesh/Chemin1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0.005, -30 )
-mesh = SubResource( 19 )
-material/0 = null
-
-[node name="Chemin2" type="Spatial" parent="CheminsMesh"]
-
-[node name="MeshInstance" type="MeshInstance" parent="CheminsMesh/Chemin2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.005, -16 )
-mesh = SubResource( 30 )
-material/0 = null
-
-[node name="MeshInstance2" type="MeshInstance" parent="CheminsMesh/Chemin2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 88, 0.005, -8.5 )
-mesh = SubResource( 31 )
-material/0 = null
-
-[node name="MeshInstance3" type="MeshInstance" parent="CheminsMesh/Chemin2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 0.005, 0 )
-mesh = SubResource( 32 )
-material/0 = null
-
-[node name="MeshInstance4" type="MeshInstance" parent="CheminsMesh/Chemin2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.005, -17.5 )
-mesh = SubResource( 37 )
-material/0 = null
-
-[node name="Chemin3" type="Spatial" parent="CheminsMesh"]
-
-[node name="MeshInstance" type="MeshInstance" parent="CheminsMesh/Chemin3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.005, 16 )
-mesh = SubResource( 33 )
-material/0 = null
-
-[node name="MeshInstance2" type="MeshInstance" parent="CheminsMesh/Chemin3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 88, 0.005, 8.5 )
-mesh = SubResource( 34 )
-material/0 = null
-
-[node name="MeshInstance4" type="MeshInstance" parent="CheminsMesh/Chemin3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0.005, 15 )
-mesh = SubResource( 38 )
-material/0 = null
-
-[node name="Chemin4" type="Spatial" parent="CheminsMesh"]
-transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.01, 0 )
-
-[node name="MeshInstance" type="MeshInstance" parent="CheminsMesh/Chemin4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 0.005, -40 )
-mesh = SubResource( 20 )
-material/0 = null
-
-[node name="MeshInstance2" type="MeshInstance" parent="CheminsMesh/Chemin4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0.005, -32.5 )
-mesh = SubResource( 21 )
-material/0 = null
-
-[node name="MeshInstance3" type="MeshInstance" parent="CheminsMesh/Chemin4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.504, 0.005, -24 )
-mesh = SubResource( 22 )
-material/0 = null
-
-[node name="MeshInstance4" type="MeshInstance" parent="CheminsMesh/Chemin4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0.005, -32 )
-mesh = SubResource( 23 )
-material/0 = null
-
-[node name="MeshInstance5" type="MeshInstance" parent="CheminsMesh/Chemin4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.005, -40 )
-mesh = SubResource( 24 )
-material/0 = null
-
-[node name="MeshInstance6" type="MeshInstance" parent="CheminsMesh/Chemin4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.005, -32.5 )
-mesh = SubResource( 25 )
-material/0 = null
-
-[node name="MeshInstance7" type="MeshInstance" parent="CheminsMesh/Chemin4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5, 0.005, -24 )
-mesh = SubResource( 26 )
-material/0 = null
-
-[node name="MeshInstance8" type="MeshInstance" parent="CheminsMesh/Chemin4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0.005, -32.5 )
-mesh = SubResource( 27 )
-material/0 = null
-
-[node name="MeshInstance9" type="MeshInstance" parent="CheminsMesh/Chemin4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5, 0.005, -40 )
-mesh = SubResource( 28 )
-material/0 = null
-
-[node name="MeshInstance10" type="MeshInstance" parent="CheminsMesh/Chemin4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0.005, -28.5 )
-mesh = SubResource( 29 )
-material/0 = null
-
-[node name="MeshInstance11" type="MeshInstance" parent="CheminsMesh/Chemin4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0.005, -40 )
-mesh = SubResource( 35 )
-material/0 = null
-
-[node name="MeshInstance12" type="MeshInstance" parent="CheminsMesh/Chemin4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0.005, -37 )
-mesh = SubResource( 36 )
-material/0 = null
 
 [connection signal="area_shape_entered" from="House" to="." method="_on_House_area_shape_entered"]
 [connection signal="pressed" from="Camera/Control/Button" to="." method="_on_Button_pressed"]
