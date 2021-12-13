@@ -74,14 +74,11 @@ func _physics_process_update_controller_velocity(delta):
 		if tabSpeed.size() > 2:
 			tabSpeed.pop_front()
 		
-		print(self.translation.y)
-		print(tabSpeed)
-		print("appyé")
 		
 		vitesse_moyenne = moyenne(tabSpeed)
 		
 
-#		print(vitesse_moyenne)
+
 
 		var dir_forward = camera.rotation.y
 		
@@ -91,7 +88,7 @@ func _physics_process_update_controller_velocity(delta):
 		#Check if the speed is lower than the minimum velocity, if it is, apply the minimum velocity instead
 
 		
-		print(velocity)
+
 	#clear the armswinger speeds array otherwise the velocity will be remembered
 	elif !is_button_pressed(armswinger_button):
 		

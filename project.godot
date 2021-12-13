@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Spatial",
 "class": "Balloon3D",
 "language": "GDScript",
-"path": "res://Scenes/Vr/Balloon.gd"
+"path": "res://Scenes/Both/Balloon3D.gd"
 }, {
 "base": "OculusTracker",
 "class": "OculusHandTracker",
@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="BigBalloonVr"
-run/main_scene="res://Scenes/Mobile/Field.tscn"
+run/main_scene="res://Scenes/Vr/World.tscn"
 config/icon="res://Assets/balloon.png"
 
 [autoload]
