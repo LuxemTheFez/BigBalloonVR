@@ -84,16 +84,18 @@ anchor_bottom = 0.0
 margin_right = 1024.0
 margin_bottom = 600.0
 
-[node name="FirstPath" type="Path2D" parent="."]
+[node name="Chemins" type="Node2D" parent="."]
+
+[node name="FirstPath" type="Path2D" parent="Chemins"]
 curve = SubResource( 1 )
 
-[node name="SecondPath" type="Path2D" parent="."]
+[node name="SecondPath" type="Path2D" parent="Chemins"]
 curve = SubResource( 2 )
 
-[node name="ThirdPath" type="Path2D" parent="."]
+[node name="ThirdPath" type="Path2D" parent="Chemins"]
 curve = SubResource( 3 )
 
-[node name="FourthPath" type="Path2D" parent="."]
+[node name="FourthPath" type="Path2D" parent="Chemins"]
 curve = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]

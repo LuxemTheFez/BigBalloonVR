@@ -3,10 +3,13 @@ extends Spatial
 onready var NODE_BALLOON3D = preload("res://Scenes/Both/Balloon3D.tscn")
 onready var NODE_PLAYER = preload("res://Scenes/Vr/Player.tscn")
 
-onready var firstPath  = $Chemins/Path1
-onready var secondPath = $Chemins/Path2
-onready var thirdPath  = $Chemins/Path3
-onready var fourthPath = $Chemins/Path4
+onready var firstPath  = $Chemins/FirstPath
+onready var secondPath = $Chemins/SecondPath
+onready var thirdPath  = $Chemins/ThirdPath
+onready var fourthPath = $Chemins/FourthPath
+
+
+
 onready var healthBar = $Camera/Control/ProgressBar
 onready var paths = [firstPath,secondPath,thirdPath,fourthPath]
 var player
@@ -44,7 +47,9 @@ func _on_House_area_shape_entered(area_id, area, area_shape, local_shape):
 		area.get_parent().get_parent().queue_free()
 		print(GlobalsBalloons.getDamage(area.get_parent().type))
 		emit_signal("updatePv", -GlobalsBalloons.getDamage(area.get_parent().type))
-		
+		print(area.get_parent().get_parent().get_parent().name)
+		print(area.get_parent().get_parent().name)
+		Network.popOnline(area.get_parent().get_parent().name)
 
 func updateHealth(value):
 	healthBar.set_value(healthBar.get_value()+value)
