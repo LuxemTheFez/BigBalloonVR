@@ -25,15 +25,24 @@ func _init():
 	hp=1
 
 func _on_HitboxBallon_area_shape_entered(area_id, area, area_shape, local_shape):
-	if(area.get_parent().name == "dagueRight" or area.get_parent().name == "dagueLeft"):
+	print("area shape : ")
+	var parent = area.get_parent()
+	print(parent.name)
+	if(parent.name == "dagueRight" or parent.name == "dagueLeft"):
 		print("aie balloon")
 #		take_damage(1)
 		rpc_id(1, "remotePop", self)
+	elif(parent.name == "Bullet"):
+		print("aie balloon")
+#		take_damage(1)
+		rpc_id(1, "remotePop", self)
+		
 
 func take_damage(damage):
 	hp-=damage
 	if(hp <= 0):
 		GlobalsBalloons.pop(self)
+
 
 func update(value = GlobalsBalloons.types.RED):
 	type = value
