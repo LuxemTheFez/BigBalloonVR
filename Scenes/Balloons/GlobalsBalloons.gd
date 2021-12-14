@@ -229,8 +229,27 @@ func create_balloon(father_balloon,type,offset):
 			if(new_path.get_child_count() > 0):
 				new_path.get_child(0).queue_free()
 			new_path.set_offset(new_path.get_offset()+offset)
+			var field = get_node("/root/Field")
+			new_path.name = str(field.getId())
 			new_path.add_child(new_balloon)
 			father_balloon.get_parent().get_parent().add_child(new_path)
+			
+			print("avant")
+			var pathNumber:int 
+			match father_balloon.get_parent().get_parent().name:
+				"FirstPath":
+					pathNumber = 0
+				"SecondPath":
+					pathNumber = 1
+				"ThirdPath":
+					pathNumber = 2
+				"FourthPath":
+					pathNumber = 3
+			print("apres")
+			
+			print(type,pathNumber,field.getId(),new_path.get_offset())
+			Network.spawnBalloon(type,pathNumber,field.getId(),new_path.get_offset()/2)
+			field.setId()
 
 func getColor(balloonType):
 	var value = Color(1,1,1,1)

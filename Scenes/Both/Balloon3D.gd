@@ -28,14 +28,18 @@ func _on_HitboxBallon_area_shape_entered(area_id, area, area_shape, local_shape)
 	print("area shape : ")
 	var parent = area.get_parent()
 	print(parent.name)
+	var id = get_parent().name
+	var path = get_parent().get_parent().name
 	if(parent.name == "dagueRight" or parent.name == "dagueLeft"):
 		print("aie balloon")
 #		take_damage(1)
-		rpc_id(1, "remotePop", self)
+		print("id : ", id)
+		Network.CallPopBalloon(path,id,1)
+		get_parent().queue_free()
 	elif(parent.name == "Bullet"):
 		print("aie balloon")
 #		take_damage(1)
-		rpc_id(1, "remotePop", self)
+		Network.CallPopBalloon(path,id,10)
 		
 
 func take_damage(damage):

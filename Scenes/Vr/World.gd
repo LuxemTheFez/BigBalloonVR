@@ -26,7 +26,7 @@ func _ready():
 	Network.connect("spawnBalloon3D", self,"spawnBalloon")
 
 
-func spawnBalloon(typeChosen,pathChosen,idBalloon):
+func spawnBalloon(typeChosen,pathChosen,idBalloon,offset):
 	print("on fait spwan des balloons")
 	var balloon = NODE_BALLOON3D.instance()
 	balloon.type = typeChosen
@@ -36,7 +36,7 @@ func spawnBalloon(typeChosen,pathChosen,idBalloon):
 	chosenPath.name = str(idBalloon)
 	chosenPath.loop = false
 	chosenPath.add_child(balloon)
-	chosenPath.set_offset(0)
+	chosenPath.set_offset(offset)
 	path.add_child(chosenPath)
 
 
@@ -55,5 +55,5 @@ func updateHealth(value):
 
 
 func _on_Button_pressed():
-	spawnBalloon(GlobalsBalloons.types.PINK,randi() % paths.size(),idBalloon)
+	spawnBalloon(GlobalsBalloons.types.PINK,randi() % paths.size(),idBalloon, 0)
 	idBalloon+=1
