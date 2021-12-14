@@ -10,6 +10,8 @@ func _ready():
 
 func _process(delta):
 	tirer()
+	if(balloonsInRange.size()>0):
+		look_at(balloonsInRange[0].transform.origin,Vector3.FORWARD)
 
 func tirer():
 	if(can_shoot and balloonsInRange.size()>0):
