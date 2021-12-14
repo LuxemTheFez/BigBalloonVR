@@ -25,7 +25,7 @@ func _init():
 	hp=1
 
 func _on_HitboxBallon_area_shape_entered(area_id, area, area_shape, local_shape):
-	print("area shape : ")
+#	print("area shape : ")
 	var parent = area.get_parent()
 	print(parent.name)
 	var id = get_parent().name

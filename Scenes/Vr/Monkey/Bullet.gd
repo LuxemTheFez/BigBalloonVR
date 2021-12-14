@@ -1,4 +1,4 @@
-extends KinematicBody
+extends Spatial
 
 var target = null
 var t = 0.0
@@ -8,9 +8,13 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	if(target!=null):
-		self.transform.origin = lerp(self.transform.origin,target.transform.origin,t)
+	print("OUHOUHOUHOUH : ", target)
+	var wr = weakref(target)
+	if(target!=null and wr.get_ref()):
+		self.global_transform.origin = lerp(self.global_transform.origin,target.global_transform.origin,t)
 		t+=delta
+	elif(!wr.get_ref()):
+		self.queue_free()
 
 func _on_Area_area_entered(area):
 	var parent = area.get_parent()
