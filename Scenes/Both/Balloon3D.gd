@@ -5,7 +5,7 @@ onready var pathToFollow = get_parent()
 onready var AreaBalloon = $HitboxBallon
 
 var hp = 100
-var speed = 100
+var speed = 300
 var type = GlobalsBalloons.types.RED setget update
 var color = Color(1,1,1,1)
 var sprite = "res://Assets/balloon.png"
