@@ -26,10 +26,14 @@ func MovementLoop(delta):
 
 func _on_HitboxBallon_area_shape_entered(area_id, area, area_shape, local_shape):
 	print("area shape : ")
-	print(area.get_parent().name)
-	if(area.get_parent().name == "dagueRight" or area.get_parent().name == "dagueLeft"):
+	var parent = area.get_parent()
+	print(parent.name)
+	if(parent.name == "dagueRight" or parent.name == "dagueLeft"):
 		print("aie")
 		rpc_id(1, "pop", get_parent().name)
+	elif(parent.name == "Bullet"):
+		print("aie")
+		rpc_id(10, "pop", get_parent().name)
 
 
 func _on_HitboxBallon_area_shape_exited(area_id, area, area_shape, local_shape):
