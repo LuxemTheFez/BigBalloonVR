@@ -1,7 +1,7 @@
 extends Spatial
 
 var can_shoot : bool = true
-var balloonsInRange = []
+var balloonsInRange : Array = []
 
 onready var NODE_BULLET = preload("res://Scenes/Vr/Monkey/Bullet.tscn")
 
@@ -17,6 +17,8 @@ func tirer():
 		$AnimationPlayer.play("jump")
 		var bullet = NODE_BULLET.instance()
 		bullet.target = balloonsInRange[0]
+		bullet.transform.origin = $BulletSpawn.transform.origin
+		add_child(bullet)
 
 func _on_Area_area_entered(area : Area):
 	var parent = area.get_parent()
@@ -28,7 +30,7 @@ func _on_Area_area_exited(area):
 	var parent = area.get_parent()
 	if(parent.name == "Balloon3D"):
 		if(parent in balloonsInRange):
-			balloonsInRange.remove(parent)
+			balloonsInRange.erase(parent)
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if(anim_name == "jump"):

@@ -25,15 +25,16 @@ func MovementLoop(delta):
 
 
 func _on_HitboxBallon_area_shape_entered(area_id, area, area_shape, local_shape):
-	print("area shape : ")
+#	print("area shape : ")
 	var parent = area.get_parent()
-	print(parent.name)
+#	print(parent.name)
 	if(parent.name == "dagueRight" or parent.name == "dagueLeft"):
 		print("aie")
 		rpc_id(1, "pop", get_parent().name)
-	elif(parent.name == "Bullet"):
+	elif(parent.name.begins_with("@Bullet")):
 		print("aie")
-		rpc_id(10, "pop", get_parent().name)
+		self.queue_free()
+		rpc_id(1, "pop", get_parent().name)
 
 
 func _on_HitboxBallon_area_shape_exited(area_id, area, area_shape, local_shape):
