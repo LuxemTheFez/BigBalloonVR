@@ -30,3 +30,7 @@ remote func spawnBalloon3D(type,path):
 	print(path)
 	print("pouet hihinetowkr")
 	emit_signal("spawnBalloon3D", type,path)
+
+func popOnline(name):
+	print("nom : ", name)
+	rpc_id(1, "pop", name)

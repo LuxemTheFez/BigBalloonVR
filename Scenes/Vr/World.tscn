@@ -256,20 +256,19 @@ transform = Transform( 300, 0, 0, 0, 300, 0, 0, 0, 300, 0, 1.4, 0 )
 
 [node name="Chemins" type="Spatial" parent="."]
 
-[node name="Path1" type="Path" parent="Chemins"]
+[node name="FirstPath" type="Path" parent="Chemins"]
 curve = SubResource( 6 )
 
-[node name="Path2" type="Path" parent="Chemins"]
+[node name="SecondPath" type="Path" parent="Chemins"]
 curve = SubResource( 38 )
 
-[node name="Path3" type="Path" parent="Chemins"]
+[node name="ThirdPath" type="Path" parent="Chemins"]
 curve = SubResource( 7 )
 
-[node name="Path4" type="Path" parent="Chemins"]
+[node name="FourthPath" type="Path" parent="Chemins"]
 curve = SubResource( 8 )
 
 [node name="CheminsMesh" type="Spatial" parent="."]
-visible = false
 
 [node name="Chemin1" type="Spatial" parent="CheminsMesh"]
 

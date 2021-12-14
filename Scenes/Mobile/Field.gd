@@ -2,10 +2,10 @@ extends Node2D
 
 const NODE_BALLOON2D = preload("res://Scenes/Both/Balloon2D.tscn")
 
-onready var firstPath  = $FirstPath
-onready var secondPath = $SecondPath
-onready var thirdPath  = $ThirdPath
-onready var fourthPath = $FourthPath
+onready var firstPath  = $Chemins/FirstPath
+onready var secondPath = $Chemins/SecondPath
+onready var thirdPath  = $Chemins/ThirdPath
+onready var fourthPath = $Chemins/FourthPath
 
 onready var paths = [firstPath,secondPath,thirdPath,fourthPath]
 
