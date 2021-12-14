@@ -5,7 +5,7 @@ var prior_controller_position = Vector3(0,0,0)
 var prior_controller_velocities = []
 
 const max_speed = 5.0
-const min_speed = 1.0
+const min_speed = 2.0
 onready var joueur = get_node("../..")
 
 var armswinger_button 
@@ -82,8 +82,8 @@ func _physics_process_update_controller_velocity(delta):
 
 		var dir_forward = camera.rotation.y
 		
-		var vectro = Vector3(-sin(dir_forward),0,-cos(dir_forward))
-		velocity = vectro * vitesse_moyenne * ARVRServer.world_scale
+		var vector = Vector3(-sin(dir_forward),0,-cos(dir_forward))
+		velocity = vector * vitesse_moyenne * ARVRServer.world_scale *1.5
 
 		#Check if the speed is lower than the minimum velocity, if it is, apply the minimum velocity instead
 

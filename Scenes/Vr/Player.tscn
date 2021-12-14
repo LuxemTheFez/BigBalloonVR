@@ -42,7 +42,6 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18798, 0 )
-visible = false
 shape = SubResource( 1 )
 
 [node name="ARVROrigin" type="ARVROrigin" parent="."]

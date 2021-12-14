@@ -1,7 +1,7 @@
 extends Node
 
 var network = NetworkedMultiplayerENet.new()
-const DEFAULT_IP: String = "192.168.8.180"
+const DEFAULT_IP: String = "192.168.1.39"
 const DEFAULT_PORT: int = 1770
 
 var id: int = 0
@@ -20,17 +20,23 @@ func _connected_ok():
 func _connected_fail():
 	print("failed to connect")
 
-func spawnBalloon(type,path):
-	rpc_id(1, "spawnBalloon", type,path)
+func spawnBalloon(type,path,idBalloon):
+	rpc_id(1, "spawnBalloon", type,path,idBalloon)
 
 
-signal spawnBalloon3D(type,path)
-remote func spawnBalloon3D(type,path):
-	print(type)
-	print(path)
-	print("pouet hihinetowkr")
-	emit_signal("spawnBalloon3D", type,path)
+signal spawnBalloon3D(type,path,idBalloon)
+remote func spawnBalloon3D(type,path,idBalloon):
+	emit_signal("spawnBalloon3D", type,path,idBalloon)
 
-func popOnline(name):
-	print("nom : ", name)
-	rpc_id(1, "pop", name)
+func sendKillBalloon(parentPath, balloonId):
+	print("nom : ", balloonId)
+	rpc_id(1, "receiveKillBalloon", parentPath,balloonId)
+
+signal killBallon(parentPath,balloonId)
+remote func killBalloon(parentPath,balloonId):
+	print("ici : ")
+	print(parentPath,balloonId)
+	emit_signal("killBallon", parentPath,balloonId)
+	
+func popBallon(balloonId):
+	pass

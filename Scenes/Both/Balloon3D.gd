@@ -4,7 +4,7 @@ class_name Balloon3D
 onready var pathToFollow = get_parent()
 onready var AreaBalloon = $HitboxBallon
 
-var hp = 100
+var hp 
 var speed = 300
 var type = GlobalsBalloons.types.RED setget update
 var color = Color(1,1,1,1)
@@ -19,26 +19,29 @@ func _process(delta):
 
 
 func MovementLoop(delta):
-
 	pathToFollow.set_offset(pathToFollow.get_offset() + speed * delta)
 
-
+func _init():
+	hp=1
 
 func _on_HitboxBallon_area_shape_entered(area_id, area, area_shape, local_shape):
 #	print("area shape : ")
 	var parent = area.get_parent()
 #	print(parent.name)
 	if(parent.name == "dagueRight" or parent.name == "dagueLeft"):
-		print("aie")
-		rpc_id(1, "pop", get_parent().name)
-	elif(parent.name.begins_with("@Bullet")):
-		print("aie")
-		self.queue_free()
-		rpc_id(1, "pop", get_parent().name)
+		print("aie balloon")
+#		take_damage(1)
+		rpc_id(1, "remotePop", self)
+	elif(parent.name == "Bullet"):
+		print("aie balloon")
+#		take_damage(1)
+		rpc_id(1, "remotePop", self)
 
+func take_damage(damage):
+	hp-=damage
+	if(hp <= 0):
+		GlobalsBalloons.pop(self)
 
-func _on_HitboxBallon_area_shape_exited(area_id, area, area_shape, local_shape):
-	pass # Replace with function body.
 
 func update(value = GlobalsBalloons.types.RED):
 	type = value
