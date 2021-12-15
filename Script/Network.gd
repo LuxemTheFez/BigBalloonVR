@@ -1,7 +1,7 @@
 extends Node
 
 var network = NetworkedMultiplayerENet.new()
-const DEFAULT_IP: String = "192.168.1.39"
+const DEFAULT_IP: String = "10.7.147.124"
 const DEFAULT_PORT: int = 1770
 
 var id: int = 0
@@ -37,9 +37,17 @@ remote func killBalloon(parentPath,balloonId):
 	emit_signal("killBallon", parentPath,balloonId)
 	
 func CallPopBalloon(path,balloonId,damage):
-
 	rpc_id(1, "remotePop", path,balloonId,damage)
 
 signal receivePop(path,idBalloon,damage)
 remote func receivePop(path,idBalloon,damage):
 	emit_signal("receivePop",path,idBalloon,damage)
+
+func remoteUpdateHp(health):
+	print("envoie : ", health)
+	rpc_id(1, "receiveUpdateHp",health)
+
+signal updateHp(health)
+remote func receiveUpdateHp(health):
+	print("reçoit health")
+	emit_signal("updateHp",health)

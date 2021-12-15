@@ -46,8 +46,8 @@ func _on_Area2D_area_shape_entered(area_id, area, area_shape, local_shape):
 func killBalloon(parentPath,balloonId):
 	get_node("/root/Field/Chemins/"+parentPath+"/"+balloonId+"").queue_free()
 
-func damageBalloon(path,idBalloon,damage):
+func damageBalloon(path,balloonId,damage):
 	print("pathDamage : ", path)
-	print("idBalloonDamage : ", idBalloon)
-	print("/root/Field/Chemins/"+path+"/"+str(idBalloon)+"")
-	get_node("/root/Field/Chemins/"+path+"/"+str(idBalloon)+"").get_child(0).take_damage(damage)
+	print("idBalloonDamage : ", balloonId)
+	print("/root/Field/Chemins/"+path+"/"+str(balloonId)+"")
+	get_node("/root/Field/Chemins/"+path+"/"+str(balloonId)+"").get_child(0).take_damage(damage)

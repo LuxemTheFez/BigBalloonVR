@@ -37,12 +37,14 @@ func _ready():
 	GlobalsPump.connect("changeSlowness",self,"changeSlowness")
 	GlobalsPump.connect("changeAir",self,"changeAir")
 	GlobalsPump.connect("changeAirMax",self,"changeAirMax")
+	Network.connect("updateHp", self, "updateHealth")
 	slowness = GlobalsPump.slowness
 	typeBalloon = GlobalsPump.typeBalloon
 	air = GlobalsPump.air
 	air_max = GlobalsPump.air_max
 	button.self_modulate = GlobalsBalloons.getColor(typeBalloon)
 	progressBarAir.tint_progress = GlobalsBalloons.getColor(typeBalloon)
+	progressHpVRMan.value = Globals.hpVRMan
 	
 #	button.modulate.r = color_max_value/255.0
 #	button.modulate.g = color_min_value/255.0
@@ -50,11 +52,16 @@ func _ready():
 	fill_air()
 
 func _process(delta):
-	progressHpVRMan.value = Globals.hpVRMan
 	progressBarAir.value = air
 	labelAir.text = str(int((float(air)/float(air_max))*100)) + "%"
 	if(auto and air>=air_max):
 		_on_TextureButton_pressed()
+
+func updateHealth(health):
+	if progressHpVRMan>0:
+		progressHpVRMan.value = health
+	else:
+		
 
 func changeTypeBalloons(new_type):
 	typeBalloon = new_type

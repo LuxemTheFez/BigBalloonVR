@@ -28,7 +28,8 @@ func _process(_delta):
 		perform_runtime_config = true
 
 func updateHealth(value):
-	Globals.hpVRMan -= value
+#	Globals.hpVRMan -= value
 	healthBar.set_value(Globals.hpVRMan)
+
 
 

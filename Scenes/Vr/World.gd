@@ -43,7 +43,10 @@ func _on_House_area_shape_entered(area_id, area, area_shape, local_shape):
 	if(area.get_parent().name == "Balloon3D"):
 		area.get_parent().get_parent().queue_free()
 		Network.sendKillBalloon(area.get_parent().get_parent().get_parent().name,area.get_parent().get_parent().name)
+		Globals.hpVRMan-=GlobalsBalloons.getDamage(area.get_parent().type)
+		Network.remoteUpdateHp(Globals.hpVRMan)
 		emit_signal("updatePv", -GlobalsBalloons.getDamage(area.get_parent().type))
+		
 
 func updateHealth(value):
 	healthBar.set_value(healthBar.get_value()+value)
