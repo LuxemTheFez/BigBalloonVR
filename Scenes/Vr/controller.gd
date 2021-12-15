@@ -22,6 +22,7 @@ var velocity = Vector3(0.0, 0.0, 0.0)
 
 var tabSpeed = []
 var oldPos = null
+var pressed = false
 
 enum Buttons {
 	VR_BUTTON_BY = 1,
@@ -101,10 +102,16 @@ func _physics_process_update_controller_velocity(delta):
 	joueur.move_and_slide(velocity, Vector3(0.0, 1.0, 0.0))
 	
 	if is_button_pressed(Buttons.VR_TRIGGER):
-		var monkeyInstance = NODE_SINGE.instance()
-		monkeyInstance.transform = joueur.transform
-		monkeyInstance
-		
+		if (nbSinge>0 && !pressed):
+			pressed = true
+			print("on est là")
+			var monkeyInstance = NODE_SINGE.instance()
+			monkeyInstance.transform = joueur.transform
+			joueur.get_parent().add_child(monkeyInstance)
+			nbSinge-=1
+	else:
+		pressed = false
+
 func moyenne(tab: Array):
 	var res = 0
 	if tab.size()!=0:

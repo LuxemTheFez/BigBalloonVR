@@ -25,7 +25,7 @@ func _ready():
 	Network.joinServer()
 	Network.connect("spawnBalloon3D", self,"spawnBalloon")
 
-func spawnBalloon(typeChosen,pathChosen,idBalloon):
+func spawnBalloon(typeChosen,pathChosen,idBalloon,offset):
 	var balloon = NODE_BALLOON3D.instance()
 	balloon.type = typeChosen
 	balloon.hp = GlobalsBalloons.getHp(balloon.type)
