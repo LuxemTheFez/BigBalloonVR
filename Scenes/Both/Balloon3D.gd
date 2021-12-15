@@ -11,8 +11,6 @@ var color = Color(1,1,1,1)
 var sprite = "res://Assets/balloon.png"
 
 
-func _ready():
-	pass
 
 func _process(delta):
 	MovementLoop(delta)

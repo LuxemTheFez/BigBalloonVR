@@ -51,3 +51,10 @@ signal updateHp(health)
 remote func receiveUpdateHp(health):
 	print("reçoit health")
 	emit_signal("updateHp",health)
+
+func finPartie():
+	rpc_id(1, "remoteFinPartie")
+
+signal sendFinPartie()
+remote func sendFinPartie():
+	 emit_signal("sendFinPartie")

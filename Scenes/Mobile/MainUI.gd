@@ -61,7 +61,8 @@ func updateHealth(health):
 	if progressHpVRMan>0:
 		progressHpVRMan.value = health
 	else:
-		
+		Network.finPartie()
+		get_tree().change_scene("res://Scenes/Mobile/fin2D.tscn")
 
 func changeTypeBalloons(new_type):
 	typeBalloon = new_type

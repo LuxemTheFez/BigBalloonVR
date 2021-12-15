@@ -24,11 +24,13 @@ func _ready():
 	randomize()
 	Network.joinServer()
 	Network.connect("spawnBalloon3D", self,"spawnBalloon")
+	Network.connect("sendFinPartie", self, "fini")
 
 func spawnBalloon(typeChosen,pathChosen,idBalloon,offset):
 	var balloon = NODE_BALLOON3D.instance()
 	balloon.type = typeChosen
 	balloon.hp = GlobalsBalloons.getHp(balloon.type)
+	balloon.speed = (balloon.speed*GlobalsBalloons.getSpeed(typeChosen))/5.12
 	var path = paths[pathChosen]
 	var chosenPath = PathFollow.new()
 	chosenPath.name = str(idBalloon)
@@ -51,7 +53,8 @@ func _on_House_area_shape_entered(area_id, area, area_shape, local_shape):
 func updateHealth(value):
 	healthBar.set_value(healthBar.get_value()+value)
 
-
+func fini():
+	get_tree().change_scene("res://Scenes/Vr/3DFin.tscn")
 
 func _on_Button_pressed():
 	spawnBalloon(GlobalsBalloons.types.PINK,randi() % paths.size(),idBalloon, 0)
