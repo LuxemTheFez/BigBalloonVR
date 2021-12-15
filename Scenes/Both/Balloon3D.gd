@@ -12,7 +12,7 @@ var sprite = "res://Assets/balloon.png"
 
 
 func _ready():
-	print("ready")
+	pass
 
 func _process(delta):
 	MovementLoop(delta)
@@ -25,15 +25,11 @@ func _init():
 	hp=1
 
 func _on_HitboxBallon_area_shape_entered(area_id, area, area_shape, local_shape):
-#	print("area shape : ")
 	var parent = area.get_parent()
-#	print(parent.name)
 	if(parent.name == "dagueRight" or parent.name == "dagueLeft"):
-		print("aie balloon")
 #		take_damage(1)
 		rpc_id(1, "remotePop", self)
 	elif(parent.name == "Bullet"):
-		print("aie balloon")
 #		take_damage(1)
 		rpc_id(1, "remotePop", self)
 

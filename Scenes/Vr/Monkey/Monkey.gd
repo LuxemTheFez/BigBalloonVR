@@ -11,16 +11,28 @@ func _ready():
 func _process(delta):
 	tirer()
 	if(balloonsInRange.size()>0):
-		look_at(balloonsInRange[0].transform.origin,Vector3.FORWARD)
+		var wr = weakref(balloonsInRange[0])
+		if(wr.get_ref()):
+			#look_at(balloonsInRange[0].global_transform.origin,Vector3.UP)
+			var targetToLook = balloonsInRange[0].global_transform.origin
+			var dir = balloonsInRange[0].global_transform.origin - self.global_transform.origin
+			targetToLook.y = 0.0
+			targetToLook.x -= 2*dir.x
+			targetToLook.z -= 2*dir.z
+			look_at(targetToLook, Vector3.UP)
+		else:
+			balloonsInRange.remove(0)
 
 func tirer():
 	if(can_shoot and balloonsInRange.size()>0):
 		can_shoot = false
+		var target = balloonsInRange[0]
 		$AnimationPlayer.play("jump")
+		yield(get_tree().create_timer(0.30), "timeout")
 		var bullet = NODE_BULLET.instance()
-		bullet.target = balloonsInRange[0]
-		bullet.transform.origin = $BulletSpawn.transform.origin
-		add_child(bullet)
+		bullet.target = target
+		bullet.global_transform.origin = $BulletSpawn.global_transform.origin
+		get_parent().add_child(bullet)
 
 func _on_Area_area_entered(area : Area):
 	var parent = area.get_parent()
