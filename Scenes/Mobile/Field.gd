@@ -11,7 +11,15 @@ onready var idBalloon = 0
 
 func _ready():
 	$CanvasLayer/MarginContainer/MainUI.connect("inflatorClicked",self,"createBalloon")
-	Network.connect("killBallon",self,"killBalloon")
+	Network.connect("killBallon" , self, "killBalloon")
+	Network.connect("receivePop" , self, "damageBalloon")
+	
+	
+func getId():
+	return idBalloon
+
+func setId():
+	idBalloon+=1
 
 func createBalloon(type,path_nb):
 	var balloon = NODE_BALLOON2D.instance()
@@ -20,7 +28,7 @@ func createBalloon(type,path_nb):
 	var path = paths[path_nb]
 	var good_path = PathFollow2D.new()
 	good_path.name = str(idBalloon)
-	Network.spawnBalloon(type,path_nb,idBalloon)
+	Network.spawnBalloon(type,path_nb,idBalloon,0)
 	idBalloon+=1
 	good_path.loop = false
 	good_path.add_child(balloon)
@@ -37,3 +45,9 @@ func _on_Area2D_area_shape_entered(area_id, area, area_shape, local_shape):
 
 func killBalloon(parentPath,balloonId):
 	get_node("/root/Field/Chemins/"+parentPath+"/"+balloonId+"").queue_free()
+
+func damageBalloon(path,idBalloon,damage):
+	print("pathDamage : ", path)
+	print("idBalloonDamage : ", idBalloon)
+	print("/root/Field/Chemins/"+path+"/"+str(idBalloon)+"")
+	get_node("/root/Field/Chemins/"+path+"/"+str(idBalloon)+"").get_child(0).take_damage(damage)

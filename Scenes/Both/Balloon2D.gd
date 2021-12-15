@@ -17,6 +17,7 @@ func _ready():
 	self.global_transform.origin.y -= float_boundary*2
 	update(type)
 
+
 func _process(delta):
 	$Sprite.rotation_degrees = -get_parent().rotation_degrees
 	var float_offset = sin(float_advancement)

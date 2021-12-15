@@ -20,23 +20,26 @@ func _connected_ok():
 func _connected_fail():
 	print("failed to connect")
 
-func spawnBalloon(type,path,idBalloon):
-	rpc_id(1, "spawnBalloon", type,path,idBalloon)
+func spawnBalloon(type,path,idBalloon,offset):
+	rpc_id(1, "spawnBalloon", type,path,idBalloon,offset)
 
 
-signal spawnBalloon3D(type,path,idBalloon)
-remote func spawnBalloon3D(type,path,idBalloon):
-	emit_signal("spawnBalloon3D", type,path,idBalloon)
+signal spawnBalloon3D(type,path,idBalloon,offset)
+remote func spawnBalloon3D(type,path,idBalloon,offset):
+	print("path : ",path)
+	emit_signal("spawnBalloon3D", type,path,idBalloon,offset)
 
 func sendKillBalloon(parentPath, balloonId):
-	print("nom : ", balloonId)
 	rpc_id(1, "receiveKillBalloon", parentPath,balloonId)
 
 signal killBallon(parentPath,balloonId)
 remote func killBalloon(parentPath,balloonId):
-	print("ici : ")
-	print(parentPath,balloonId)
 	emit_signal("killBallon", parentPath,balloonId)
 	
-func popBallon(balloonId):
-	pass
+func CallPopBalloon(path,balloonId,damage):
+
+	rpc_id(1, "remotePop", path,balloonId,damage)
+
+signal receivePop(path,idBalloon,damage)
+remote func receivePop(path,idBalloon,damage):
+	emit_signal("receivePop",path,idBalloon,damage)
