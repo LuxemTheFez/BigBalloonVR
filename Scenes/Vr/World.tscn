@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Scenes/Vr/Obstacles/MaisonBleue.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Vr/World.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Vr/COIN.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Vr/Bridges/Spruce.scn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Vr/Obstacles/Tree.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Vr/Monkey/Monkey.scn" type="PackedScene" id=11]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.152941, 0.25098, 0.513726, 1 )
@@ -222,11 +223,24 @@ size = Vector3( 8, 0.01, 2 )
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 7 )
 
+[sub_resource type="BoxShape" id=48]
+extents = Vector3( 100, 10, 2 )
+
+[sub_resource type="BoxShape" id=49]
+extents = Vector3( 100, 10, 2 )
+
+[sub_resource type="BoxShape" id=50]
+extents = Vector3( 2, 10, 54 )
+
+[sub_resource type="BoxShape" id=51]
+extents = Vector3( 2, 10, 54 )
+
 [node name="World" type="Spatial"]
 script = ExtResource( 2 )
 
 [node name="Water" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.1, 0 )
+visible = false
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -281,8 +295,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 11 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.200804, -0.461343, 0.864199, -2.05852e-08, 0.882168, 0.470935, -0.979631, -0.0945658, 0.177143, -47.0739, 13.7498, -34.396 )
-visible = false
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -55.4664, 7.998, -23.3583 )
 current = true
 far = 8192.0
 
@@ -625,6 +638,37 @@ transform = Transform( -4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4.
 transform = Transform( -4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 0, -1.3943, 0 )
 
 [node name="Bridges" type="Spatial" parent="."]
+
+[node name="Monkey" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.2612, 0, -20.2178 )
+
+[node name="Bounds" type="Spatial" parent="."]
+
+[node name="Edges" type="Spatial" parent="Bounds"]
+
+[node name="StaticBody" type="StaticBody" parent="Bounds/Edges"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Bounds/Edges/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.806, -52 )
+shape = SubResource( 48 )
+
+[node name="StaticBody2" type="StaticBody" parent="Bounds/Edges"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Bounds/Edges/StaticBody2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.806, 52 )
+shape = SubResource( 49 )
+
+[node name="StaticBody3" type="StaticBody" parent="Bounds/Edges"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Bounds/Edges/StaticBody3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -102, 7.806, 0 )
+shape = SubResource( 50 )
+
+[node name="StaticBody4" type="StaticBody" parent="Bounds/Edges"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Bounds/Edges/StaticBody4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102, 7.806, 0 )
+shape = SubResource( 51 )
 
 [connection signal="area_shape_entered" from="House" to="." method="_on_House_area_shape_entered"]
 [connection signal="pressed" from="Camera/Control/Button" to="." method="_on_Button_pressed"]

@@ -8,9 +8,10 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	print("OUHOUHOUHOUH : ", target)
 	var wr = weakref(target)
 	if(target!=null and wr.get_ref()):
+		if(t>1.0):
+			t = 1.0
 		self.global_transform.origin = lerp(self.global_transform.origin,target.global_transform.origin,t)
 		t+=delta
 	elif(!wr.get_ref()):

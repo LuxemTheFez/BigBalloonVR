@@ -85,11 +85,9 @@ func pump():
 	button.texture_normal = imgPump0
 	yield(get_tree().create_timer(slowness/2000.0),"timeout")
 	for i in range(1,4):
-		print(i)
 		button.texture_normal = imgsPump[i%4]
 		yield(get_tree().create_timer(slowness/1000.0),"timeout")
 	for i in range(2,-1,-1):
-		print(i)
 		button.texture_normal = imgsPump[i%4]
 		yield(get_tree().create_timer(slowness/1000.0),"timeout")
 

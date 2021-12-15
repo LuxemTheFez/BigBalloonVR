@@ -25,9 +25,7 @@ func _ready():
 	Network.joinServer()
 	Network.connect("spawnBalloon3D", self,"spawnBalloon")
 
-
-func spawnBalloon(typeChosen,pathChosen,idBalloon,offset):
-	print("on fait spwan des balloons")
+func spawnBalloon(typeChosen,pathChosen,idBalloon):
 	var balloon = NODE_BALLOON3D.instance()
 	balloon.type = typeChosen
 	balloon.hp = GlobalsBalloons.getHp(balloon.type)
@@ -43,9 +41,7 @@ func spawnBalloon(typeChosen,pathChosen,idBalloon,offset):
 
 func _on_House_area_shape_entered(area_id, area, area_shape, local_shape):
 	if(area.get_parent().name == "Balloon3D"):
-		print("aie maison")
 		area.get_parent().get_parent().queue_free()
-		print(GlobalsBalloons.getDamage(area.get_parent().type))
 		Network.sendKillBalloon(area.get_parent().get_parent().get_parent().name,area.get_parent().get_parent().name)
 		emit_signal("updatePv", -GlobalsBalloons.getDamage(area.get_parent().type))
 
