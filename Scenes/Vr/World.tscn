@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Scenes/Vr/Obstacles/MaisonBleue.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Vr/World.gd" type="Script" id=2]
@@ -9,10 +9,10 @@
 [ext_resource path="res://Scenes/Vr/COIN.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Vr/Bridges/Spruce.scn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Vr/Obstacles/Tree.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Vr/Monkey/Monkey.scn" type="PackedScene" id=11]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.152941, 0.25098, 0.513726, 1 )
+flags_transparent = true
+albedo_color = Color( 0.152941, 0.25098, 0.513726, 0.537255 )
 
 [sub_resource type="QuadMesh" id=2]
 material = SubResource( 1 )
@@ -264,7 +264,6 @@ script = ExtResource( 2 )
 
 [node name="Water" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.1, 0 )
-visible = false
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -662,9 +661,6 @@ transform = Transform( -4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4.
 transform = Transform( -4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 0, -1.3943, 0 )
 
 [node name="Bridges" type="Spatial" parent="."]
-
-[node name="Monkey" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.2612, 0, -20.2178 )
 
 [node name="Bounds" type="Spatial" parent="."]
 
