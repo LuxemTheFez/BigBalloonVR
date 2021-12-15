@@ -165,3 +165,5 @@ gravity = Vector3( 0.8, 0, -0.8 )
 initial_velocity = 1.0
 initial_velocity_random = 0.5
 scale_amount_curve = SubResource( 14 )
+
+[node name="Node" type="Node" parent="."]

@@ -9,7 +9,8 @@ const min_speed = 2.0
 onready var joueur = get_node("../..")
 
 var armswinger_button 
-
+var nbSinge = 3
+onready var NODE_SINGE = preload("res://Scenes/Vr/Monkey/Monkey.scn")
 
 var camera
 
@@ -98,6 +99,11 @@ func _physics_process_update_controller_velocity(delta):
 
 		
 	joueur.move_and_slide(velocity, Vector3(0.0, 1.0, 0.0))
+	
+	if is_button_pressed(Buttons.VR_TRIGGER):
+		var monkeyInstance = NODE_SINGE.instance()
+		monkeyInstance.transform = joueur.transform
+		monkeyInstance
 		
 func moyenne(tab: Array):
 	var res = 0
