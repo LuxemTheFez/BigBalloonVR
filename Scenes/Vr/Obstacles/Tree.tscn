@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.721569, 0.529412, 0.439216, 1 )
 
-[sub_resource type="ArrayMesh" id=1]
+[sub_resource type="ArrayMesh" id=2]
 blend_shape_mode = 0
 surfaces/0 = {
 "aabb": AABB( -0.0412916, -0.0559834, -0.0164349, 0.100777, 0.0927937, 0.171457 ),
@@ -12,16 +12,16 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97539,
 "index_count": 3348,
-"material": SubResource( 3 ),
+"material": SubResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 3348
 }
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.498039, 0.917647, 0.345098, 1 )
 
-[sub_resource type="ArrayMesh" id=2]
+[sub_resource type="ArrayMesh" id=4]
 blend_shape_mode = 0
 surfaces/0 = {
 "aabb": AABB( -0.0220427, -0.0227654, -0.0168183, 0.0332123, 0.039393, 0.0299116 ),
@@ -30,7 +30,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97539,
 "index_count": 960,
-"material": SubResource( 4 ),
+"material": SubResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 960
@@ -49,12 +49,12 @@ transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
 
 [node name="Cylinder" type="MeshInstance" parent="RootNode"]
 transform = Transform( 100, 0, 0, 0, -3.57628e-05, 100, 0, -100, -3.57628e-05, 0, 0, 0 )
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Icosphere" type="MeshInstance" parent="RootNode"]
 transform = Transform( 496.762, 0, 0, 0, -0.000177656, 496.762, 0, -496.762, -0.000177656, 3.50534, 13.6757, -1.17282 )
-mesh = SubResource( 2 )
+mesh = SubResource( 4 )
 material/0 = null
 
 [node name="CollisionShape2" type="CollisionShape" parent="."]

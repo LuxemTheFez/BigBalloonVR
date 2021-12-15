@@ -24,6 +24,8 @@ onready var imgPump2 = preload("res://Assets/pump/inflator-3.png")
 onready var imgPump3 = preload("res://Assets/pump/inflator-4.png")
 onready var imgsPump = [imgPump0,imgPump1,imgPump2,imgPump3]
 
+onready var NODE_MONKEY = preload("res://Scenes/Mobile/Monkey/Monkey.tscn")
+
 var air = 0
 var air_max
 var slowness
@@ -45,6 +47,7 @@ func _ready():
 	button.self_modulate = GlobalsBalloons.getColor(typeBalloon)
 	progressBarAir.tint_progress = GlobalsBalloons.getColor(typeBalloon)
 	progressHpVRMan.value = Globals.hpVRMan
+	add_monkey(-80,-45)
 	
 #	button.modulate.r = color_max_value/255.0
 #	button.modulate.g = color_min_value/255.0
@@ -119,3 +122,8 @@ func _on_path_selected(number):
 	for i in range(buttons.get_child_count()):
 		if(i != pathSelected):
 			buttons.get_child(i).pressed = false
+
+func add_monkey(x,y):
+	var monkey : Node2D = NODE_MONKEY.instance()
+	monkey.transform.origin = Vector2(x*5.12,y*5.12)
+	$Centre.add_child(monkey)
