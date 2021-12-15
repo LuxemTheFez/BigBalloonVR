@@ -19,13 +19,13 @@ onready var idBalloon = 0
 func _ready():
 	player = NODE_PLAYER.instance()
 	# To comment to play on editor
-	add_child(player)
+	#add_child(player)
 	player.transform.origin = Vector3(95, 0,0)
 	randomize()
 	Network.joinServer()
 	Network.connect("spawnBalloon3D", self,"spawnBalloon")
 
-func spawnBalloon(typeChosen,pathChosen,idBalloon):
+func spawnBalloon(typeChosen,pathChosen,idBalloon,offset):
 	var balloon = NODE_BALLOON3D.instance()
 	balloon.type = typeChosen
 	balloon.hp = GlobalsBalloons.getHp(balloon.type)
