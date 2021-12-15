@@ -1,7 +1,7 @@
 extends Node
 
 var network = NetworkedMultiplayerENet.new()
-const DEFAULT_IP: String = "10.7.147.124"
+const DEFAULT_IP: String = "172.20.10.8"
 const DEFAULT_PORT: int = 1770
 
 var id: int = 0

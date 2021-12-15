@@ -58,7 +58,7 @@ func _process(delta):
 		_on_TextureButton_pressed()
 
 func updateHealth(health):
-	if progressHpVRMan>0:
+	if progressHpVRMan.value>0:
 		progressHpVRMan.value = health
 	else:
 		Network.finPartie()
