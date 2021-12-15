@@ -40,6 +40,7 @@ func _on_HitboxBallon_area_shape_entered(area_id, area, area_shape, local_shape)
 		print("aie balloon")
 #		take_damage(1)
 		Network.CallPopBalloon(path,id,10)
+		get_parent().queue_free()
 		
 
 func take_damage(damage):
