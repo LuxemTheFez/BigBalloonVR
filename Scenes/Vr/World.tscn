@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Scenes/Vr/Obstacles/MaisonBleue.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Vr/World.gd" type="Script" id=2]
@@ -9,49 +9,49 @@
 [ext_resource path="res://Scenes/Vr/COIN.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Vr/Bridges/Spruce.scn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Vr/Obstacles/Tree.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Vr/Monkey/Monkey.scn" type="PackedScene" id=11]
 
-[sub_resource type="SpatialMaterial" id=108]
-albedo_color = Color( 0.152941, 0.25098, 0.513726, 1 )
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+albedo_color = Color( 0.152941, 0.25098, 0.513726, 0.537255 )
 
-[sub_resource type="QuadMesh" id=109]
-material = SubResource( 108 )
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
 size = Vector2( 500, 500 )
 
-[sub_resource type="PlaneMesh" id=110]
+[sub_resource type="PlaneMesh" id=3]
 
-[sub_resource type="CubeMesh" id=111]
+[sub_resource type="CubeMesh" id=4]
 material = ExtResource( 6 )
 size = Vector3( 95, 0.1, 38 )
 
-[sub_resource type="CubeMesh" id=112]
+[sub_resource type="CubeMesh" id=5]
 material = ExtResource( 6 )
 size = Vector3( 88, 0.1, 45 )
 
-[sub_resource type="CubeMesh" id=113]
+[sub_resource type="CubeMesh" id=6]
 material = ExtResource( 6 )
 size = Vector3( 95, 0.1, 38 )
 
-[sub_resource type="CubeMesh" id=114]
+[sub_resource type="CubeMesh" id=7]
 material = ExtResource( 6 )
 size = Vector3( 88, 0.1, 45 )
 
-[sub_resource type="CubeMesh" id=115]
+[sub_resource type="CubeMesh" id=8]
 material = ExtResource( 6 )
 size = Vector3( 95, 0.1, 38 )
 
-[sub_resource type="CubeMesh" id=116]
+[sub_resource type="CubeMesh" id=9]
 material = ExtResource( 6 )
 size = Vector3( 95, 0.1, 38 )
 
-[sub_resource type="CubeMesh" id=117]
+[sub_resource type="CubeMesh" id=10]
 material = ExtResource( 6 )
 size = Vector3( 88, 0.1, 45 )
 
-[sub_resource type="BoxShape" id=118]
+[sub_resource type="BoxShape" id=11]
 extents = Vector3( 0.195513, 1, 0.202328 )
 
-[sub_resource type="StyleBoxFlat" id=119]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.0784314, 1, 0, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -63,7 +63,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id=120]
+[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 1, 1, 1, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -75,188 +75,188 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="Curve3D" id=121]
+[sub_resource type="Curve3D" id=14]
 bake_interval = 5.0
 _data = {
 "points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -100, 0, -40, 0, 0, 0, 0, 0, 0, -64, 0, -40, 0, 0, 0, 0, 0, 0, -64, 0, -24, 0, 0, 0, 0, 0, 0, -32, 0, -24, 0, 0, 0, 0, 0, 0, -32, 0, -40, 0, 0, 0, 0, 0, 0, 16, 0, -40, 0, 0, 0, 0, 0, 0, 16, 0, -24, 0, 0, 0, 0, 0, 0, 48, 0, -24, 0, 0, 0, 0, 0, 0, 48, 0, -40, 0, 0, 0, 0, 0, 0, 72, 0, -40, 0, 0, 0, 0, 0, 0, 72, 0, -16, 0, 0, 0, 0, 0, 0, 88, 0, -16, 0, 0, 0, 0, 0, 0, 88, 0, 0, 0, 0, 0, 0, 0, 0, 104, 0, 0 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 }
 
-[sub_resource type="Curve3D" id=122]
+[sub_resource type="Curve3D" id=15]
 bake_interval = 5.0
 _data = {
 "points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -100, 0, -16, 0, 0, 0, 0, 0, 0, 88, 0, -16, 0, 0, 0, 0, 0, 0, 88.0792, 0, -0.00951126, 0, 0, 0, 0, 0, 0, 104.008, 0, 0.000325595 ),
 "tilts": PoolRealArray( 0, 0, 0, 0 )
 }
 
-[sub_resource type="Curve3D" id=123]
+[sub_resource type="Curve3D" id=16]
 bake_interval = 5.0
 _data = {
 "points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -100.082, 0, 15.9258, 0, 0, 0, 0, 0, 0, 72, 0, 16, 0, 0, 0, 0, 0, 0, 88, 0, 16, 0, 0, 0, 0, 0, 0, 88, 0, 0, 0, 0, 0, 0, 0, 0, 104, 0, 0 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0 )
 }
 
-[sub_resource type="Curve3D" id=124]
+[sub_resource type="Curve3D" id=17]
 bake_interval = 5.0
 _data = {
 "points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -100, 0, 40, 0, 0, 0, 0, 0, 0, -64, 0, 40, 0, 0, 0, 0, 0, 0, -64, 0, 24, 0, 0, 0, 0, 0, 0, -32, 0, 24, 0, 0, 0, 0, 0, 0, -32, 0, 40, 0, 0, 0, 0, 0, 0, 16, 0, 40, 0, 0, 0, 0, 0, 0, 16, 0, 24, 0, 0, 0, 0, 0, 0, 48, 0, 24, 0, 0, 0, 0, 0, 0, 48, 0, 40, 0, 0, 0, 0, 0, 0, 72, 0, 40, 0, 0, 0, 0, 0, 0, 72, 0, 16, 0, 0, 0, 0, 0, 0, 88, 0, 16, 0, 0, 0, 0, 0, 0, 88.0994, 0, 0.0259939, 0, 0, 0, 0, 0, 0, 104, 0, 0 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 }
 
-[sub_resource type="CubeMesh" id=125]
+[sub_resource type="CubeMesh" id=18]
 material = ExtResource( 4 )
 size = Vector3( 36, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=126]
+[sub_resource type="CubeMesh" id=19]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 17 )
 
-[sub_resource type="CubeMesh" id=127]
+[sub_resource type="CubeMesh" id=20]
 material = ExtResource( 4 )
 size = Vector3( 33, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=128]
+[sub_resource type="CubeMesh" id=21]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 21 )
 
-[sub_resource type="CubeMesh" id=129]
+[sub_resource type="CubeMesh" id=22]
 material = ExtResource( 4 )
 size = Vector3( 25, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=130]
+[sub_resource type="CubeMesh" id=23]
 material = ExtResource( 4 )
 size = Vector3( 10, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=131]
+[sub_resource type="CubeMesh" id=24]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 17 )
 
-[sub_resource type="CubeMesh" id=132]
+[sub_resource type="CubeMesh" id=25]
 material = ExtResource( 4 )
 size = Vector3( 33, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=133]
+[sub_resource type="CubeMesh" id=26]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 17 )
 
-[sub_resource type="CubeMesh" id=134]
+[sub_resource type="CubeMesh" id=27]
 material = ExtResource( 4 )
 size = Vector3( 25, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=135]
+[sub_resource type="CubeMesh" id=28]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 28 )
 
-[sub_resource type="CubeMesh" id=136]
+[sub_resource type="CubeMesh" id=29]
 material = ExtResource( 4 )
 size = Vector3( 94, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=137]
+[sub_resource type="CubeMesh" id=30]
 material = ExtResource( 4 )
 size = Vector3( 83, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=138]
+[sub_resource type="CubeMesh" id=31]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 17 )
 
-[sub_resource type="CubeMesh" id=139]
+[sub_resource type="CubeMesh" id=32]
 material = ExtResource( 4 )
 size = Vector3( 16, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=140]
+[sub_resource type="CubeMesh" id=33]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 3 )
 
-[sub_resource type="CubeMesh" id=141]
+[sub_resource type="CubeMesh" id=34]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 17 )
 
-[sub_resource type="CubeMesh" id=142]
+[sub_resource type="CubeMesh" id=35]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 3 )
 
-[sub_resource type="CubeMesh" id=143]
+[sub_resource type="CubeMesh" id=36]
 material = ExtResource( 4 )
 size = Vector3( 36, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=144]
+[sub_resource type="CubeMesh" id=37]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 17 )
 
-[sub_resource type="CubeMesh" id=145]
+[sub_resource type="CubeMesh" id=38]
 material = ExtResource( 4 )
 size = Vector3( 33, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=146]
+[sub_resource type="CubeMesh" id=39]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 18 )
 
-[sub_resource type="CubeMesh" id=147]
+[sub_resource type="CubeMesh" id=40]
 material = ExtResource( 4 )
 size = Vector3( 10, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=148]
+[sub_resource type="CubeMesh" id=41]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 17 )
 
-[sub_resource type="CubeMesh" id=149]
+[sub_resource type="CubeMesh" id=42]
 material = ExtResource( 4 )
 size = Vector3( 33, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=150]
+[sub_resource type="CubeMesh" id=43]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 17 )
 
-[sub_resource type="CubeMesh" id=151]
+[sub_resource type="CubeMesh" id=44]
 material = ExtResource( 4 )
 size = Vector3( 25, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=152]
+[sub_resource type="CubeMesh" id=45]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 25 )
 
-[sub_resource type="CubeMesh" id=153]
+[sub_resource type="CubeMesh" id=46]
 material = ExtResource( 4 )
 size = Vector3( 8, 0.01, 2 )
 
-[sub_resource type="CubeMesh" id=154]
+[sub_resource type="CubeMesh" id=47]
 material = ExtResource( 4 )
 size = Vector3( 2, 0.01, 7 )
 
-[sub_resource type="BoxShape" id=155]
+[sub_resource type="BoxShape" id=48]
 extents = Vector3( 100, 10, 2 )
 
-[sub_resource type="BoxShape" id=156]
+[sub_resource type="BoxShape" id=49]
 extents = Vector3( 100, 10, 2 )
 
-[sub_resource type="BoxShape" id=157]
+[sub_resource type="BoxShape" id=50]
 extents = Vector3( 2, 10, 54 )
 
-[sub_resource type="BoxShape" id=158]
+[sub_resource type="BoxShape" id=51]
 extents = Vector3( 2, 10, 54 )
 
-[sub_resource type="BoxShape" id=159]
+[sub_resource type="BoxShape" id=52]
 extents = Vector3( 12, 10, 12 )
 
-[sub_resource type="BoxShape" id=160]
+[sub_resource type="BoxShape" id=53]
 extents = Vector3( 5, 10, 13.5 )
 
-[sub_resource type="BoxShape" id=161]
+[sub_resource type="BoxShape" id=54]
 extents = Vector3( 17.8, 10, 5 )
 
-[sub_resource type="BoxShape" id=162]
+[sub_resource type="BoxShape" id=55]
 extents = Vector3( 23.8, 10, 5 )
 
-[sub_resource type="BoxShape" id=163]
+[sub_resource type="BoxShape" id=56]
 extents = Vector3( 5, 10, 9.5 )
 
-[sub_resource type="BoxShape" id=164]
+[sub_resource type="BoxShape" id=57]
 extents = Vector3( 5, 10, 9.5 )
 
-[sub_resource type="BoxShape" id=107]
+[sub_resource type="BoxShape" id=58]
 extents = Vector3( 5, 10, 3.75 )
 
-[sub_resource type="BoxShape" id=165]
+[sub_resource type="BoxShape" id=59]
 extents = Vector3( 5, 10, 3.75 )
 
 [node name="World" type="Spatial"]
@@ -264,8 +264,7 @@ script = ExtResource( 2 )
 
 [node name="Water" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.1, 0 )
-visible = false
-mesh = SubResource( 109 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Ground" type="Spatial" parent="."]
@@ -273,42 +272,42 @@ material/0 = null
 [node name="Ground" type="MeshInstance" parent="Ground"]
 transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0 )
 visible = false
-mesh = SubResource( 110 )
+mesh = SubResource( 3 )
 material/0 = ExtResource( 6 )
 
 [node name="BottomLeft" type="MeshInstance" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.5, -0.05, 31 )
-mesh = SubResource( 111 )
+mesh = SubResource( 4 )
 material/0 = null
 
 [node name="BottomLeft2" type="MeshInstance" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56, -0.05, 27.5 )
-mesh = SubResource( 112 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="TopLeft" type="MeshInstance" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.5, -0.05, -31 )
-mesh = SubResource( 113 )
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="TopLeft2" type="MeshInstance" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56, -0.05, -27.5 )
-mesh = SubResource( 114 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="BottomRight" type="MeshInstance" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.5, -0.05, 31 )
-mesh = SubResource( 115 )
+mesh = SubResource( 8 )
 material/0 = null
 
 [node name="TopRight" type="MeshInstance" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.5, -0.05, -31 )
-mesh = SubResource( 116 )
+mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Right" type="MeshInstance" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56, -0.05, 0 )
-mesh = SubResource( 117 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="House" type="Area" parent="."]
@@ -316,7 +315,7 @@ transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 109.783, 0, 0 )
 
 [node name="CollisionHouse" type="CollisionShape" parent="House"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 118 )
+shape = SubResource( 11 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -55.4664, 7.998, -23.3583 )
@@ -347,8 +346,8 @@ margin_left = 33.2475
 margin_top = 92.2475
 margin_right = 320.247
 margin_bottom = 134.247
-custom_styles/fg = SubResource( 119 )
-custom_styles/bg = SubResource( 120 )
+custom_styles/fg = SubResource( 12 )
+custom_styles/bg = SubResource( 13 )
 step = 1.0
 value = 100.0
 percent_visible = false
@@ -454,16 +453,16 @@ transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -20, 0, -20.5 )
 [node name="Chemins" type="Spatial" parent="."]
 
 [node name="FirstPath" type="Path" parent="Chemins"]
-curve = SubResource( 121 )
+curve = SubResource( 14 )
 
 [node name="SecondPath" type="Path" parent="Chemins"]
-curve = SubResource( 122 )
+curve = SubResource( 15 )
 
 [node name="ThirdPath" type="Path" parent="Chemins"]
-curve = SubResource( 123 )
+curve = SubResource( 16 )
 
 [node name="FourthPath" type="Path" parent="Chemins"]
-curve = SubResource( 124 )
+curve = SubResource( 17 )
 
 [node name="CheminsMesh" type="Spatial" parent="."]
 
@@ -471,106 +470,106 @@ curve = SubResource( 124 )
 
 [node name="MeshInstance1" type="MeshInstance" parent="CheminsMesh/Chemin1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 0.005, -40 )
-mesh = SubResource( 125 )
+mesh = SubResource( 18 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="CheminsMesh/Chemin1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0.005, -32.5 )
-mesh = SubResource( 126 )
+mesh = SubResource( 19 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="CheminsMesh/Chemin1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.504, 0.005, -24 )
-mesh = SubResource( 127 )
+mesh = SubResource( 20 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="CheminsMesh/Chemin1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0.005, -33.5 )
-mesh = SubResource( 128 )
+mesh = SubResource( 21 )
 material/0 = null
 
 [node name="MeshInstance5-1" type="MeshInstance" parent="CheminsMesh/Chemin1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 0.005, -40 )
-mesh = SubResource( 129 )
+mesh = SubResource( 22 )
 material/0 = null
 
 [node name="MeshInstance5-2" type="MeshInstance" parent="CheminsMesh/Chemin1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.005, -40 )
-mesh = SubResource( 130 )
+mesh = SubResource( 23 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="CheminsMesh/Chemin1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.005, -32.5 )
-mesh = SubResource( 131 )
+mesh = SubResource( 24 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="CheminsMesh/Chemin1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5, 0.005, -24 )
-mesh = SubResource( 132 )
+mesh = SubResource( 25 )
 material/0 = null
 
 [node name="MeshInstance8" type="MeshInstance" parent="CheminsMesh/Chemin1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0.005, -32.5 )
-mesh = SubResource( 133 )
+mesh = SubResource( 26 )
 material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="CheminsMesh/Chemin1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5, 0.005, -40 )
-mesh = SubResource( 134 )
+mesh = SubResource( 27 )
 material/0 = null
 
 [node name="MeshInstance10" type="MeshInstance" parent="CheminsMesh/Chemin1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0.005, -30 )
-mesh = SubResource( 135 )
+mesh = SubResource( 28 )
 material/0 = null
 
 [node name="Chemin2" type="Spatial" parent="CheminsMesh"]
 
 [node name="MeshInstance1-1" type="MeshInstance" parent="CheminsMesh/Chemin2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 0.005, -16 )
-mesh = SubResource( 136 )
+mesh = SubResource( 29 )
 material/0 = null
 
 [node name="MeshInstance1-2" type="MeshInstance" parent="CheminsMesh/Chemin2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.5, 0.005, -16 )
-mesh = SubResource( 137 )
+mesh = SubResource( 30 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="CheminsMesh/Chemin2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 88, 0.005, -8.5 )
-mesh = SubResource( 138 )
+mesh = SubResource( 31 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="CheminsMesh/Chemin2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 0.005, 0 )
-mesh = SubResource( 139 )
+mesh = SubResource( 32 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="CheminsMesh/Chemin2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.005, -17.5 )
-mesh = SubResource( 140 )
+mesh = SubResource( 33 )
 material/0 = null
 
 [node name="Chemin3" type="Spatial" parent="CheminsMesh"]
 
 [node name="MeshInstance1-1" type="MeshInstance" parent="CheminsMesh/Chemin3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 0.005, 16 )
-mesh = SubResource( 136 )
+mesh = SubResource( 29 )
 material/0 = null
 
 [node name="MeshInstance1-2" type="MeshInstance" parent="CheminsMesh/Chemin3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.5, 0.005, 16 )
-mesh = SubResource( 137 )
+mesh = SubResource( 30 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="CheminsMesh/Chemin3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 88, 0.005, 8.5 )
-mesh = SubResource( 141 )
+mesh = SubResource( 34 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="CheminsMesh/Chemin3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0.005, 15 )
-mesh = SubResource( 142 )
+mesh = SubResource( 35 )
 material/0 = null
 
 [node name="Chemin4" type="Spatial" parent="CheminsMesh"]
@@ -578,67 +577,67 @@ transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.01
 
 [node name="MeshInstance1" type="MeshInstance" parent="CheminsMesh/Chemin4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 0.005, -40 )
-mesh = SubResource( 143 )
+mesh = SubResource( 36 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="CheminsMesh/Chemin4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0.005, -32.5 )
-mesh = SubResource( 144 )
+mesh = SubResource( 37 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="CheminsMesh/Chemin4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.504, 0.005, -24 )
-mesh = SubResource( 145 )
+mesh = SubResource( 38 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="CheminsMesh/Chemin4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0.005, -32 )
-mesh = SubResource( 146 )
+mesh = SubResource( 39 )
 material/0 = null
 
 [node name="MeshInstance5-1" type="MeshInstance" parent="CheminsMesh/Chemin4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5084, 0.005, -40 )
-mesh = SubResource( 129 )
+mesh = SubResource( 22 )
 material/0 = null
 
 [node name="MeshInstance5-2" type="MeshInstance" parent="CheminsMesh/Chemin4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.005, -40 )
-mesh = SubResource( 147 )
+mesh = SubResource( 40 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="CheminsMesh/Chemin4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.005, -32.5 )
-mesh = SubResource( 148 )
+mesh = SubResource( 41 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="CheminsMesh/Chemin4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5, 0.005, -24 )
-mesh = SubResource( 149 )
+mesh = SubResource( 42 )
 material/0 = null
 
 [node name="MeshInstance8" type="MeshInstance" parent="CheminsMesh/Chemin4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0.005, -32.5 )
-mesh = SubResource( 150 )
+mesh = SubResource( 43 )
 material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="CheminsMesh/Chemin4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5, 0.005, -40 )
-mesh = SubResource( 151 )
+mesh = SubResource( 44 )
 material/0 = null
 
 [node name="MeshInstance10" type="MeshInstance" parent="CheminsMesh/Chemin4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0.005, -28.5 )
-mesh = SubResource( 152 )
+mesh = SubResource( 45 )
 material/0 = null
 
 [node name="MeshInstance11" type="MeshInstance" parent="CheminsMesh/Chemin4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0.005, -40 )
-mesh = SubResource( 153 )
+mesh = SubResource( 46 )
 material/0 = null
 
 [node name="MeshInstance12" type="MeshInstance" parent="CheminsMesh/Chemin4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0.005, -37 )
-mesh = SubResource( 154 )
+mesh = SubResource( 47 )
 material/0 = null
 
 [node name="Bridges" type="Spatial" parent="CheminsMesh"]
@@ -663,9 +662,6 @@ transform = Transform( -4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 0, -
 
 [node name="Bridges" type="Spatial" parent="."]
 
-[node name="Monkey" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.2612, 0, -20.2178 )
-
 [node name="Bounds" type="Spatial" parent="."]
 
 [node name="Edges" type="Spatial" parent="Bounds"]
@@ -674,25 +670,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.2612, 0, -20.2178 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Bounds/Edges/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -52 )
-shape = SubResource( 155 )
+shape = SubResource( 48 )
 
 [node name="StaticBody2" type="StaticBody" parent="Bounds/Edges"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Bounds/Edges/StaticBody2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 52 )
-shape = SubResource( 156 )
+shape = SubResource( 49 )
 
 [node name="StaticBody3" type="StaticBody" parent="Bounds/Edges"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Bounds/Edges/StaticBody3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -102, 10, 0 )
-shape = SubResource( 157 )
+shape = SubResource( 50 )
 
 [node name="StaticBody4" type="StaticBody" parent="Bounds/Edges"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Bounds/Edges/StaticBody4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102, 10, 0 )
-shape = SubResource( 158 )
+shape = SubResource( 51 )
 
 [node name="Lake" type="Spatial" parent="Bounds"]
 
@@ -700,19 +696,19 @@ shape = SubResource( 158 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Bounds/Lake/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
-shape = SubResource( 159 )
+shape = SubResource( 52 )
 
 [node name="StaticBody2" type="StaticBody" parent="Bounds/Lake"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Bounds/Lake/StaticBody2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
-shape = SubResource( 160 )
+shape = SubResource( 53 )
 
 [node name="StaticBody3" type="StaticBody" parent="Bounds/Lake"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Bounds/Lake/StaticBody3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.8, 10, 0 )
-shape = SubResource( 161 )
+shape = SubResource( 54 )
 
 [node name="Rivers" type="Spatial" parent="Bounds"]
 
@@ -720,31 +716,31 @@ shape = SubResource( 161 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Bounds/Rivers/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76.2, 10, 0 )
-shape = SubResource( 162 )
+shape = SubResource( 55 )
 
 [node name="StaticBody2" type="StaticBody" parent="Bounds/Rivers"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Bounds/Rivers/StaticBody2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -28 )
-shape = SubResource( 163 )
+shape = SubResource( 56 )
 
 [node name="StaticBody3" type="StaticBody" parent="Bounds/Rivers"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Bounds/Rivers/StaticBody3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 28 )
-shape = SubResource( 164 )
+shape = SubResource( 57 )
 
 [node name="StaticBody4" type="StaticBody" parent="Bounds/Rivers"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Bounds/Rivers/StaticBody4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 46.25 )
-shape = SubResource( 107 )
+shape = SubResource( 58 )
 
 [node name="StaticBody5" type="StaticBody" parent="Bounds/Rivers"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Bounds/Rivers/StaticBody5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -46.25 )
-shape = SubResource( 165 )
+shape = SubResource( 59 )
 
 [connection signal="area_shape_entered" from="House" to="." method="_on_House_area_shape_entered"]
 [connection signal="pressed" from="Camera/Control/Button" to="." method="_on_Button_pressed"]
