@@ -58,3 +58,17 @@ func finPartie():
 signal sendFinPartie()
 remote func sendFinPartie():
 	 emit_signal("sendFinPartie")
+
+func ajouteSinge(x,z,name):
+	rpc_id(1, "sendSinge", x,z,name)
+
+signal receiveSinge(x,z,name)
+remote func receiveSinge(x,z,name):
+	 emit_signal("receiveSinge",x,z,name)
+
+func killMonkey(name):
+	rpc_id(1, "sendKillMonkey", name)
+
+signal receiveKillSinge(name)
+remote func receiveKillSinge(name):
+	 emit_signal("receiveKillSinge",name)

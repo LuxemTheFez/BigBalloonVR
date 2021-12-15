@@ -107,7 +107,9 @@ func _physics_process_update_controller_velocity(delta):
 			print("on est là")
 			var monkeyInstance = NODE_SINGE.instance()
 			monkeyInstance.transform = joueur.transform
+			monkeyInstance.name = str(nbSinge)
 			joueur.get_parent().add_child(monkeyInstance)
+			Network.ajouteSinge(joueur.transform.origin.x,joueur.transform.origin.z, str(nbSinge))
 			nbSinge-=1
 	else:
 		pressed = false

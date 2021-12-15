@@ -319,6 +319,7 @@ shape = SubResource( 11 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -55.4664, 7.998, -23.3583 )
+visible = false
 current = true
 far = 8192.0
 

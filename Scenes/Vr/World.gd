@@ -2,6 +2,7 @@ extends Spatial
 
 onready var NODE_BALLOON3D = preload("res://Scenes/Both/Balloon3D.tscn")
 onready var NODE_PLAYER = preload("res://Scenes/Vr/Player.tscn")
+onready var NODE_FIN = preload("res://Scenes/Vr/3DFin.tscn")
 
 onready var firstPath  = $Chemins/FirstPath
 onready var secondPath = $Chemins/SecondPath
@@ -25,6 +26,7 @@ func _ready():
 	Network.joinServer()
 	Network.connect("spawnBalloon3D", self,"spawnBalloon")
 	Network.connect("sendFinPartie", self, "fini")
+	Network.connect("receiveKillSinge", self, "deleteSinge")
 
 func spawnBalloon(typeChosen,pathChosen,idBalloon,offset):
 	var balloon = NODE_BALLOON3D.instance()
@@ -54,8 +56,17 @@ func updateHealth(value):
 	healthBar.set_value(healthBar.get_value()+value)
 
 func fini():
-	get_tree().change_scene("res://Scenes/Vr/3DFin.tscn")
+	var arrayPath = get_node("/root/Field/Chemins/").get_children()
+	for path in arrayPath:
+		for voie in path.get_children():
+			voie.queue_free()
+	var panneauFin = NODE_FIN.instance()
+	panneauFin.name="fin"
+	add_child(panneauFin)
 
 func _on_Button_pressed():
 	spawnBalloon(GlobalsBalloons.types.PINK,randi() % paths.size(),idBalloon, 0)
 	idBalloon+=1
+
+func deleteSinge(name):
+	get_node(name).queue_free()

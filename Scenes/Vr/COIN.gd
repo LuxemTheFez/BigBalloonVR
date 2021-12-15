@@ -8,7 +8,7 @@ extends Spatial
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var anim = $Spatial/AnimationPlayer.get_animation("walkcycle_1")
+	var anim = $AnimationPlayer.get_animation("walkcycle_1")
 	anim.set_loop(true)
-	$Spatial/AnimationPlayer.set_speed_scale(0.5)
-	$Spatial/AnimationPlayer.play("walkcycle_1")
+	$AnimationPlayer.set_speed_scale(0.5)
+	$AnimationPlayer.play("walkcycle_1")

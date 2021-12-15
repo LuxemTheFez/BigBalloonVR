@@ -40,6 +40,7 @@ func _ready():
 	GlobalsPump.connect("changeAir",self,"changeAir")
 	GlobalsPump.connect("changeAirMax",self,"changeAirMax")
 	Network.connect("updateHp", self, "updateHealth")
+	Network.connect("receiveSinge", self, "add_monkey")
 	slowness = GlobalsPump.slowness
 	typeBalloon = GlobalsPump.typeBalloon
 	air = GlobalsPump.air
@@ -47,7 +48,6 @@ func _ready():
 	button.self_modulate = GlobalsBalloons.getColor(typeBalloon)
 	progressBarAir.tint_progress = GlobalsBalloons.getColor(typeBalloon)
 	progressHpVRMan.value = Globals.hpVRMan
-	add_monkey(-80,-45)
 	
 #	button.modulate.r = color_max_value/255.0
 #	button.modulate.g = color_min_value/255.0
@@ -123,7 +123,8 @@ func _on_path_selected(number):
 		if(i != pathSelected):
 			buttons.get_child(i).pressed = false
 
-func add_monkey(x,y):
+func add_monkey(x,y,name):
 	var monkey : Node2D = NODE_MONKEY.instance()
 	monkey.transform.origin = Vector2(x*5.12,y*5.12)
+	monkey.name = name
 	$Centre.add_child(monkey)

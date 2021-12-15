@@ -16,3 +16,4 @@ func _on_Touch_pressed():
 	$Label.text = str(vie)
 	if(vie == 0):
 		self.queue_free()
+		Network.killMonkey(self.name)
