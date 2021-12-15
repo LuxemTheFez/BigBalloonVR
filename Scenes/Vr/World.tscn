@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Scenes/Vr/Obstacles/MaisonBleue.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Vr/World.gd" type="Script" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Scenes/Vr/COIN.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Vr/Bridges/Spruce.scn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Vr/Obstacles/Tree.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Vr/Monkey/Monkey.scn" type="PackedScene" id=10]
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true
@@ -742,9 +741,6 @@ shape = SubResource( 58 )
 [node name="CollisionShape" type="CollisionShape" parent="Bounds/Rivers/StaticBody5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -46.25 )
 shape = SubResource( 59 )
-
-[node name="Monkey" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66.9133, 0, -19.504 )
 
 [connection signal="area_shape_entered" from="House" to="." method="_on_House_area_shape_entered"]
 [connection signal="pressed" from="Camera/Control/Button" to="." method="_on_Button_pressed"]

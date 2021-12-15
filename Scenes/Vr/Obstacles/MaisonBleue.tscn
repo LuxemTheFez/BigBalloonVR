@@ -54,10 +54,12 @@ _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.331395, 1 ), 0.0, 0.0, 0, 
 
 [node name="Cube" type="CSGMesh" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+use_collision = true
 mesh = SubResource( 2 )
 
 [node name="Toit" type="CSGMesh" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+use_collision = true
 mesh = SubResource( 4 )
 
 [node name="Porte" type="MeshInstance" parent="."]
